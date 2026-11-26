@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "nome-do-servidor": {
+      "command": "npx",
+      "args": ["-y", "pacote-mcp-exemplo"]
+    }
+  }
+}

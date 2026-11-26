@@ -1,0 +1,15 @@
+# Preferências locais do Claude Code (não versionar)
+CLAUDE.local.md
+.claude/settings.local.json
+claude/settings/settings.local.json
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Segredos e ambiente
+.env
+.env.*
+!.env.example
