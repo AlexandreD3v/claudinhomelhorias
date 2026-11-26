@@ -3,11 +3,12 @@
 - **URL:**
 - **Acesso:** AAAA-MM-DD HH:MM (America/Sao_Paulo)
 - **Autor / site:**
+- **Tema:** claude-code | claude-app | ambos
 - **Status:** em andamento | publicado | parcial | descartado
 
 ## Resumo
 
-Um parágrafo com o que o texto realmente ensina de útil para o Claude Code.
+Um parágrafo com o que o texto realmente ensina de útil para o Claude Code ou para o app Claude.
 
 ## Insights acionáveis
 
@@ -15,18 +16,19 @@ Um parágrafo com o que o texto realmente ensina de útil para o Claude Code.
 
 - **Ação:**
 - **Quando importa:**
-- **Tipo de artefato:** skill | trecho-claude-md | regra | agente | hook | settings | estilo | mcp | comando | nenhum
-- **Destino de instalação:** projeto | usuario | — (se o tipo for nenhum)
+- **Tipo de artefato:** skill | trecho-claude-md | regra | agente | hook | settings | estilo | mcp | comando | guia-app | instrucao-projeto | estilo-app | prompt | config-app | nenhum
+- **Destino de instalação:** projeto | usuario (Claude Code) · app-claude | projeto-claudeai | configuracoes (app Claude) · — (se o tipo for nenhum)
 - **Seção de origem:** (nome da seção, não um recorte longo)
 - **Conferido na doc oficial:** sim/não — link
 
 ## Artefatos gerados
 
 - `claude/...` — destino: `projeto` ou `usuario` — uma linha do que faz
+- `claude-app/...` — destino: `app-claude`, `projeto-claudeai` ou `configuracoes` — uma linha do que faz
 
 ## Duplicatas e reuso
 
-O que já existia neste repo e foi só estendido, ou por que é inédito.
+O que já existia em `claude/` ou em `claude-app/` e foi só estendido, ou por que é inédito.
 
 ## Divergências com a documentação oficial
 
@@ -38,4 +40,4 @@ Se esta página discordar de outra fonte (oficial ou não), descreva **os dois l
 
 ## Pendências
 
-O que ficou para depois, se o status não for `publicado` (teste no Claude Code, push no GitHub, captura incompleta, etc.).
+O que ficou para depois, se o status não for `publicado` (teste no Claude Code ou no app Claude, push no GitHub, captura incompleta, etc.).

@@ -1,12 +1,12 @@
 # Instruções deste repositório
 
-Este repositório guarda o processo e os artefatos de customização do Claude Code do Alexandre. Idioma: **pt-BR**.
+Este repositório guarda o processo e os artefatos de customização do Claude Code (`claude/`) e do app Claude (`claude-app/`) do Alexandre. Idioma: **pt-BR**.
 
 ## Antes de qualquer site novo
 
 1. Leia `CONTEXTO.md` (premissas, decisões e convenções vigentes).
 2. Consulte `fontes/INDICE.md` para numeração e duplicatas.
-3. Siga `GUIA-ANALISE-SITE.md` à risca (`PROCESSO.md` só resume o contrato de qualidade). Respeite as premissas confirmadas em `CONTEXTO.md` (destino no artefato, `publicado` só após push, fonte `parcial` até o teste no Claude Code, um commit por lote, conflitos com os dois lados visíveis). A skill `/processar-fonte` é a versão invocável; o subagente `extrator-fonte` isola a leitura.
+3. Siga `GUIA-ANALISE-SITE.md` à risca (`PROCESSO.md` só resume o contrato de qualidade). Respeite as premissas confirmadas em `CONTEXTO.md` (escopo Claude Code + app Claude com tema por fonte, destino no artefato, `publicado` só após push, fonte `parcial` até o teste no Claude Code ou no app Claude, um commit por lote, conflitos com os dois lados visíveis). A skill `/processar-fonte` é a versão invocável; o subagente `extrator-fonte` isola a leitura.
 
 ## O que não fazer
 
@@ -19,6 +19,6 @@ Este repositório guarda o processo e os artefatos de customização do Claude C
 ## Gravação
 
 - Notas em `fontes/NNN-slug.md` a partir de `templates/fonte.md`.
-- Artefatos instaláveis em `claude/`, com citação da fonte.
+- Artefatos instaláveis do Claude Code em `claude/`; do app Claude em `claude-app/` (guias, projetos, estilos, prompts, configurações). Citação da fonte em ambos.
 - Ponte para o Claude Code carregar skills/agentes desta pasta: `.claude/`.
 - Commits diretos em `main`, mensagem em pt-BR: um por fonte isolada, ou um só para o lote. `publicado` só depois do push no GitHub.

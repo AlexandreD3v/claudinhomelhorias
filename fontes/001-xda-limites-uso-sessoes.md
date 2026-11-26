@@ -3,6 +3,7 @@
 - **URL:** https://www.xda-developers.com/i-stopped-hitting-claudes-usage-limits-after-changing-one-habit-in-how-i-start-sessions/
 - **Acesso:** 2026-11-25 22:03 (America/Sao_Paulo)
 - **Autor / site:** Abhinav Raj, XDA Developers. Publicado em 21 de novembro de 2026, 10:30 (EST) — 12:30 (America/Sao_Paulo).
+- **Tema:** claude-code
 - **Status:** parcial
 
 ## Resumo

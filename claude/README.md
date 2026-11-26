@@ -1,6 +1,6 @@
 # Pacote instalável (`claude/`)
 
-Espelho do layout `.claude/` do Claude Code, mais um `CLAUDE.md` starter para copiar com critério. O Claude Code **não** lê esta pasta automaticamente. Veja a seção “Instalar os artefatos” do [`README.md`](../README.md) na raiz.
+Espelho do layout `.claude/` do Claude Code, mais um `CLAUDE.md` starter para copiar com critério. O Claude Code **não** lê esta pasta automaticamente. Veja a seção “Instalar os artefatos” do [`README.md`](../README.md) na raiz. O material do app Claude (chat/Desktop) fica na pasta irmã [`claude-app/`](../claude-app/).
 
 | Subpasta | Equivale a | O que há hoje |
 | --- | --- | --- |

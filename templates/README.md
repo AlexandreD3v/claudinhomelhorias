@@ -4,7 +4,7 @@ Copie o modelo do tipo, nunca edite o template no lugar para gravar uma fonte re
 
 ## Campo `destino`
 
-Todo artefato instalável declara o destino de instalação, com um destes valores:
+Todo artefato instalável declara o destino de instalação. Para o Claude Code (`claude/`), os valores são:
 
 - `projeto` — instalar no projeto: `.claude/` (skills, agentes, comandos, regras, estilos, hooks, `settings.json`) ou, quando for o caso, `./CLAUDE.md` / `./.mcp.json` na raiz.
 - `usuario` — instalar para todos os projetos: `~/.claude/` ou, para MCP pessoal, `~/.claude.json`.
@@ -19,6 +19,8 @@ Onde o campo aparece (sem inventar chave de frontmatter que o Claude Code não r
 | Script de hook | comentário no cabeçalho do script |
 | JSON de exemplo (settings, bloco de hook, MCP) | comentário no markdown irmão do template e no README da pasta; o JSON em si permanece só com chaves válidas, para poder mesclar |
 
+Para o app Claude (`claude-app/`) os valores são `app-claude`, `projeto-claudeai` e `configuracoes`, sempre numa linha `**Destino de instalação:** …` logo abaixo do título (significado em [`claude-app/README.md`](../claude-app/README.md)). Não há instalação por cópia de arquivo: o app não lê o repositório.
+
 ## Modelos
 
 | Modelo | Uso |
@@ -32,3 +34,4 @@ Onde o campo aparece (sem inventar chave de frontmatter que o Claude Code não r
 | [`output-style.md`](output-style.md) | Estilo de saída em `claude/output-styles/` |
 | [`hook-settings.md`](hook-settings.md) + [`hook-settings.json`](hook-settings.json) | Bloco `hooks` para mesclar em settings |
 | [`mcp.md`](mcp.md) + [`mcp.json`](mcp.json) | Esqueleto de `.mcp.json` de projeto ou nota para `~/.claude.json` |
+| [`artefato-claude-app.md`](artefato-claude-app.md) | Guia, instrução de projeto, estilo, prompt ou configuração em `claude-app/<subpasta>/` |

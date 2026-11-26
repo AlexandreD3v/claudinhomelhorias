@@ -3,6 +3,7 @@
 - **URL:** https://www.marktechpost.com/2026/11/17/anthropic-claude-code-code-mode-javascript-tool-calls/
 - **Acesso:** 2026-11-25 23:16 (America/Sao_Paulo)
 - **Autor / site:** Michal Sutter, MarkTechPost. Publicado em 17 de novembro de 2026. O link enviado vinha com `?amp=1`; a URL canônica (sem AMP) é a registrada acima.
+- **Tema:** claude-code
 - **Status:** parcial
 
 ## Resumo

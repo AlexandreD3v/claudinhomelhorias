@@ -73,3 +73,15 @@ Fonte: [Skills](https://code.claude.com/docs/en/skills).
 - Projeto: copiar para `.claude/…` e, nos trechos de orientação permanente, editar `./CLAUDE.md` ou `./.claude/CLAUDE.md` com critério. Não versionar `CLAUDE.local.md` nem `settings.local.json`.
 - Usuário: copiar para `~/.claude/…`.
 - Conferir o que carregou: `/context`, `/doctor`, `/hooks`, `/mcp`.
+
+## App Claude (chat e Claude Desktop)
+
+Escopo acrescentado em 26 de novembro de 2026. Estas páginas são onde se confere um recurso do app antes de gravar em [`claude-app/`](../claude-app/). Em beta, o conteúdo muda rápido: reabra a página vigente a cada fonte.
+
+- [Claude by Anthropic: recursos e artigos](https://claude.com/resources) — anúncios de recursos, como [Turn artifacts into Mac and Windows apps](https://claude.com/resources/articles/install-as-app).
+- [Help Center](https://support.claude.com) — passo a passo, requisitos, planos e limites; por exemplo [Install an artifact as an app](https://support.claude.com/en/articles/18516354-install-an-artifact-as-an-app) e o [guia de admin de artifacts](https://support.claude.com/en/articles/16994751-artifacts-admin-guide-for-team-and-enterprise-plans).
+- [Notas de versão do Claude](https://support.claude.com/en/articles/12138966-release-notes) e [changelog do Claude Desktop](https://claude.com/docs/cowork/changelog) — datam o recurso e a versão mínima.
+- [Notícias da Anthropic](https://www.anthropic.com/news).
+- Pontos de contato com o Claude Code: [artifacts do Claude Code](https://code.claude.com/docs/en/artifacts) e [app desktop](https://code.claude.com/docs/en/desktop-quickstart).
+
+Destinos dos artefatos do app: `app-claude`, `projeto-claudeai` e `configuracoes`. Não há instalação por cópia de arquivo; veja [`claude-app/README.md`](../claude-app/README.md).
