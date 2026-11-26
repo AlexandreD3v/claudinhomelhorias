@@ -40,3 +40,4 @@ Mesmo pipeline de [`GUIA-ANALISE-SITE.md`](../GUIA-ANALISE-SITE.md): nota em `fo
 ## Guias hoje
 
 - [`guias/instalar-artifact-como-app.md`](guias/instalar-artifact-como-app.md) — instalar um artifact como app no Claude para Mac e Windows, com permissões, limites e cota (fonte 003, não testado).
+- [`guias/skills-pelo-mcp.md`](guias/skills-pelo-mcp.md) — skills, Tasks e Elicitation enviados pelo conector MCP, com planos, o que o artigo e o oficial divergem, e File Uploads ainda em rollout (fonte 006, não testado).

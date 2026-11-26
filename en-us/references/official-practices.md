@@ -14,7 +14,7 @@ Source: [Extend Claude Code](https://code.claude.com/docs/en/features-overview),
 - Skill: reusable knowledge or workflow; the body only loads when the skill is used or invoked with `/name`. Prefer a skill to a standalone command for new work.
 - Subagent: another loop, isolated context, returns a summary. Good for parallel work, independent review or noisy research — not for "getting a better answer" to the same task.
 - Hook: side effect or block on a lifecycle event (`PreToolUse`, `PostToolUse`, `Stop`, etc.). For real enforcement, use a `command`/`http`/`mcp_tool` hook (not `prompt`/`agent`) and, if the hook's failure must not pass, `onFailure: "block"`.
-- MCP: external tools without a comfortable CLI. Project servers in `.mcp.json`; servers only you use in `~/.claude.json`.
+- MCP: external tools without a comfortable CLI. Project servers in `.mcp.json`; servers only you use in `~/.claude.json`. Skills from the server itself (Skills over MCP, beta, Claude Code v2.1.331+ according to the docs; changelog 2.1.332): invoke as `/server:skill`; on for Pro/Max/Ultra, Team/Enterprise need an admin. Docs: [MCP](https://code.claude.com/docs/en/mcp#use-skills-from-mcp-servers).
 - Plugin: packages skills, agents, hooks, MCP, styles and the like for distribution.
 - Output style: role, tone and format of **every** response in the session.
 

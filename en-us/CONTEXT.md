@@ -2,7 +2,7 @@
 
 US English mirror of [`CONTEXTO.md`](../CONTEXTO.md) (pt-BR, canonical). This file is the repository's persistent context. Any future session should read it **before** processing a new site, and update it (in both languages) when a decision or convention changes.
 
-Last updated: November 26, 2026, 09:40 (America/Sao_Paulo).
+Last updated: November 26, 2026, 17:55 (America/Sao_Paulo).
 
 ## Goal
 
@@ -138,6 +138,12 @@ Current premises, confirmed by Alexandre on **November 25, 2026** (America/Sao_P
 - The links in the en-US version point to the en-US equivalents; whatever exists only in pt-BR (no file, for now) would point to the original.
 - New rule in the guide (step 10 and checklist), in `PROCESSO.md`, in `CLAUDE.md`, in the templates and in the `processar-fonte`/`process-source` skills: new or changed notes, index and process files ship in both languages.
 
+
+### 2026-11-26 — Source 006 (Skills over MCP)
+
+- Alexandre approved processing now the official Anthropic article (Nov 24) on Skills over MCP, Tasks, Elicitation and File Uploads, despite the high weekly quota.
+- Theme `ambos`: skill `usar-skills-pelo-mcp` (user) and guide `claude-app/guias/skills-pelo-mcp.md` (app-claude), with an en-US mirror (`use-mcp-skills`, `guides/skills-over-mcp.md`). Status `parcial`.
+- Divergences recorded in the note: the article still says “coming soon to Enterprise”, the official table already lists Team and Enterprise as Admin-enabled; the docs cite v2.1.331+, the changelog announces the feature in 2.1.332; File Uploads is “rolling out” in the article and already documented in beta with restrictions.
 ## How to resume a session
 
 1. Read this file (including the Premises section) and the latest diary entry.

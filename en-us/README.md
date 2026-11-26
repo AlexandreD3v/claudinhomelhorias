@@ -16,6 +16,7 @@ US English mirror of this repository: the installable packages, the analysis not
 | [`fontes/003-9to5mac-install-as-app.md`](../fontes/003-9to5mac-install-as-app.md) | [`sources/003-9to5mac-install-as-app.md`](sources/003-9to5mac-install-as-app.md) |
 | [`fontes/004-xda-instrucoes-fora-da-sessao.md`](../fontes/004-xda-instrucoes-fora-da-sessao.md) | [`sources/004-xda-instructions-out-of-session.md`](sources/004-xda-instructions-out-of-session.md) |
 | [`fontes/005-xda-pasta-compartilhada-handoff.md`](../fontes/005-xda-pasta-compartilhada-handoff.md) | [`sources/005-xda-shared-handoff-folder.md`](sources/005-xda-shared-handoff-folder.md) |
+| [`fontes/006-anthropic-skills-pelo-mcp.md`](../fontes/006-anthropic-skills-pelo-mcp.md) | [`sources/006-anthropic-skills-over-mcp.md`](sources/006-anthropic-skills-over-mcp.md) |
 | [`GUIA-ANALISE-SITE.md`](../GUIA-ANALISE-SITE.md) | [`SITE-ANALYSIS-GUIDE.md`](SITE-ANALYSIS-GUIDE.md) |
 | [`CONTEXTO.md`](../CONTEXTO.md) | [`CONTEXT.md`](CONTEXT.md) |
 | [`PROCESSO.md`](../PROCESSO.md) | [`PROCESS.md`](PROCESS.md) |

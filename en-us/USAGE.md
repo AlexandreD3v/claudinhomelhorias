@@ -27,6 +27,8 @@ The English names differ on purpose: both versions can be installed together in 
 | 004 | starter | `CLAUDE.md` | `CLAUDE.md` (additions) |
 | 005 | snippet | `snippets/share-agents-md.md` | `snippets/compartilhar-agents-md.md` |
 | 005 | skill | `write-handoff` (+ `templates.md`) | `registrar-handoff` (+ `modelos.md`) |
+| 006 | skill | `use-mcp-skills` | `usar-skills-pelo-mcp` |
+| 006 | app guide | `guides/skills-over-mcp.md` | `guias/skills-pelo-mcp.md` |
 | repo | skill | `process-source` | `processar-fonte` |
 | repo | subagent | `source-extractor` | `extrator-fonte` |
 | repo | output style | `concise-en-us` | `conciso-ptbr` |
@@ -84,6 +86,18 @@ The English names differ on purpose: both versions can be installed together in 
 - **Invoke:** manual only: `/write-handoff` when ending the session.
 - **Test:** in a new session, `/context all` should list `CLAUDE.md` under Memory files. Run `/write-handoff`, open another session and ask "continue from the last handoff".
 
+
+## Source 006 — skills, Tasks and Elicitation over MCP
+
+- **What it does:** the `use-mcp-skills` skill shows how to find and invoke skills that the MCP server or connector itself ships (`/server:skill`), how to follow an MCP task in `/tasks` and how to answer an Elicitation dialog, with the official limits (version, plans, where it does not apply). The `guides/skills-over-mcp.md` guide covers the same in the Claude app. File Uploads is mentioned only as a warning: it is still rolling out.
+- **Install the skill (user):**
+  ```bash
+  mkdir -p ~/.claude/skills && cp -R "$REPO/en-us/claude/skills/use-mcp-skills" ~/.claude/skills/
+  ```
+  The app guide is not installed by copying a file: open `en-us/claude-app/guides/skills-over-mcp.md` and follow it in the app (destination `app-claude`).
+- **Invoke:** `/use-mcp-skills` when you are about to connect a server that publishes skills, or let Claude load this skill if the description matches. The *server's* skill is invoked with `/server:skill`, not with this name.
+- **Test:** on Claude Code v2.1.332+ (Pro/Max/Ultra, `/login`), connect a server or connector that publishes skills; `/skills` should list `server:skill`; invoke a harmless skill. If it offers Tasks or Elicitation, follow it in `/tasks` (close `/tasks` to see the dialog). In the app, the flow is through the connector. Not tested yet; the source is `parcial`.
+
 ## The repository's own tools
 
 They do not come from an external source; they serve the pipeline. `process-source` (skill, user) and `source-extractor` (subagent, user) process a new link following the [guide](SITE-ANALYSIS-GUIDE.md): install with `cp -R "$REPO/en-us/claude/skills/process-source" ~/.claude/skills/` and `cp "$REPO/en-us/claude/agents/source-extractor.md" ~/.claude/agents/`, and invoke with `/process-source <url>` in this repository's checkout. The `concise-en-us` style (user) goes into `~/.claude/output-styles/` and is turned on with `/output-style` or `"outputStyle": "concise-en-us"` in settings.
@@ -92,7 +106,7 @@ They do not come from an external source; they serve the pipeline. `process-sour
 
 Goal: see, in your own use, whether the English version uses less context or is followed better than the Portuguese one. There is no official number on this; you have to measure.
 
-**Isolate the two versions.** With both installed together, the descriptions of the auto-invoked skills (`use-opusplan`/`usar-opusplan`, `use-code-mode`/`usar-code-mode`, `process-source`/`processar-fonte`) enter the skill list twice, and Claude may pick either one. To compare, install one language at a time, or use one config directory for each (it may ask you to log in again):
+**Isolate the two versions.** With both installed together, the descriptions of the auto-invoked skills (`use-opusplan`/`usar-opusplan`, `use-code-mode`/`usar-code-mode`, `use-mcp-skills`/`usar-skills-pelo-mcp`, `process-source`/`processar-fonte`) enter the skill list twice, and Claude may pick either one. To compare, install one language at a time, or use one config directory for each (it may ask you to log in again):
 
 ```bash
 CLAUDE_CONFIG_DIR=~/.claude-ptbr claude   # only the pt-BR artifacts installed here

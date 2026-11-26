@@ -15,3 +15,4 @@ The English names below differ from the pt-BR ones (in parentheses), so both ver
 - [`use-code-mode`](use-code-mode/SKILL.md) (`usar-code-mode`) — turn on the experimental Code Mode and chain tool calls in JavaScript (destination: `user`; source 002).
 - [`trim-context`](trim-context/SKILL.md) (`enxugar-contexto`) — measure and trim the always-loaded context (CLAUDE.md, rules, imports), deciding what becomes a skill, rule, subfolder, hook or subagent (destination: `user`; source 004).
 - [`write-handoff`](write-handoff/SKILL.md) (`registrar-handoff`) — handoff note in `HANDOFF.md` for projects shared with other agents, with templates in [`templates.md`](write-handoff/templates.md) (destination: `project`; source 005).
+- [`use-mcp-skills`](use-mcp-skills/SKILL.md) (`usar-skills-pelo-mcp`) — skills, Tasks and Elicitation shipped by an MCP server or connector (destination: `user`; source 006).

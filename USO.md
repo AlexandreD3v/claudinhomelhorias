@@ -27,6 +27,8 @@ Os nomes em inglês são diferentes de propósito: as duas versões podem ficar 
 | 004 | starter | `CLAUDE.md` (acréscimos) | `CLAUDE.md` |
 | 005 | snippet | `snippets/compartilhar-agents-md.md` | `snippets/share-agents-md.md` |
 | 005 | skill | `registrar-handoff` (+ `modelos.md`) | `write-handoff` (+ `templates.md`) |
+| 006 | skill | `usar-skills-pelo-mcp` | `use-mcp-skills` |
+| 006 | guia do app | `guias/skills-pelo-mcp.md` | `guides/skills-over-mcp.md` |
 | repo | skill | `processar-fonte` | `process-source` |
 | repo | subagente | `extrator-fonte` | `source-extractor` |
 | repo | estilo de saída | `conciso-ptbr` | `concise-en-us` |
@@ -84,6 +86,18 @@ Os nomes em inglês são diferentes de propósito: as duas versões podem ficar 
 - **Invocar:** só manual: `/registrar-handoff` ao encerrar a sessão.
 - **Testar:** numa sessão nova, `/context all` deve listar o `CLAUDE.md` em Memory files. Rode `/registrar-handoff`, abra outra sessão e peça “continue do último handoff”.
 
+
+## Fonte 006 — skills, Tasks e Elicitation pelo MCP
+
+- **O que faz:** a skill `usar-skills-pelo-mcp` ensina a achar e invocar skills que o próprio servidor ou conector MCP envia (`/servidor:skill`), a acompanhar um MCP task em `/tasks` e a responder o diálogo de Elicitation, com os limites oficiais (versão, planos, o que não vale). O guia `guias/skills-pelo-mcp.md` cobre o mesmo no app Claude. File Uploads fica só como aviso: ainda em rollout.
+- **Instalar a skill (usuario):**
+  ```bash
+  mkdir -p ~/.claude/skills && cp -R "$REPO/claude/skills/usar-skills-pelo-mcp" ~/.claude/skills/
+  ```
+  O guia do app não se instala por cópia: abra `claude-app/guias/skills-pelo-mcp.md` e siga no app (destino `app-claude`).
+- **Invocar:** `/usar-skills-pelo-mcp` quando for ligar um servidor que publica skills, ou deixe o Claude carregar a skill se a descrição combinar. A skill *do servidor* se invoca com `/servidor:skill`, não com este nome.
+- **Testar:** no Claude Code v2.1.332+ (Pro/Max/Ultra, `/login`), conecte um servidor ou conector que publique skills; `/skills` deve listar `servidor:skill`; invoque uma skill inofensiva. Se houver Tasks ou Elicitation, acompanhe em `/tasks` (feche `/tasks` para ver o diálogo). No app, o fluxo é pelo conector. Ainda não testado; a fonte está `parcial`.
+
 ## Ferramentas do próprio repositório
 
 Não vêm de fonte externa; servem ao pipeline. `processar-fonte` (skill, usuario) e `extrator-fonte` (subagente, usuario) processam um link novo seguindo o [guia](GUIA-ANALISE-SITE.md): instale com `cp -R "$REPO/claude/skills/processar-fonte" ~/.claude/skills/` e `cp "$REPO/claude/agents/extrator-fonte.md" ~/.claude/agents/`, e invoque com `/processar-fonte <url>` no checkout deste repositório. O estilo `conciso-ptbr` (usuario) vai para `~/.claude/output-styles/` e se liga com `/output-style` ou `"outputStyle": "conciso-ptbr"` no settings.
@@ -92,7 +106,7 @@ Não vêm de fonte externa; servem ao pipeline. `processar-fonte` (skill, usuari
 
 Objetivo: ver, no seu uso, se a versão em inglês gasta menos contexto ou é seguida melhor que a em português. Não há número oficial sobre isso; é preciso medir.
 
-**Isole as duas versões.** Com as duas instaladas juntas, as descrições das skills automáticas (`usar-opusplan`/`use-opusplan`, `usar-code-mode`/`use-code-mode`, `processar-fonte`/`process-source`) entram duas vezes na lista de skills, e o Claude pode escolher qualquer uma. Para comparar, instale um idioma por vez, ou use um diretório de configuração para cada um (pode pedir login de novo):
+**Isole as duas versões.** Com as duas instaladas juntas, as descrições das skills automáticas (`usar-opusplan`/`use-opusplan`, `usar-code-mode`/`use-code-mode`, `usar-skills-pelo-mcp`/`use-mcp-skills`, `processar-fonte`/`process-source`) entram duas vezes na lista de skills, e o Claude pode escolher qualquer uma. Para comparar, instale um idioma por vez, ou use um diretório de configuração para cada um (pode pedir login de novo):
 
 ```bash
 CLAUDE_CONFIG_DIR=~/.claude-ptbr claude   # só os artefatos pt-BR instalados aqui

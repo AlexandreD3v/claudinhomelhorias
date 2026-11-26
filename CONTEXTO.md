@@ -2,7 +2,7 @@
 
 Este arquivo é o contexto persistente do repositório. Qualquer sessão futura deve lê-lo **antes** de processar um site novo, e atualizá-lo quando uma decisão ou convenção mudar.
 
-Última atualização: 26 de novembro de 2026, 09:40 (America/Sao_Paulo).
+Última atualização: 26 de novembro de 2026, 17:55 (America/Sao_Paulo).
 
 ## Objetivo
 
@@ -137,6 +137,12 @@ Premissas vigentes, confirmadas por Alexandre em **25 de novembro de 2026** (Ame
 - Os links da versão en-US apontam para os equivalentes en-US; o que só existe em pt-BR (nenhum arquivo, por ora) apontaria para o original.
 - Regra nova no guia (passo 10 e checklist), em `PROCESSO.md`, no `CLAUDE.md`, nos templates e nas skills `processar-fonte`/`process-source`: notas, índice e arquivos de processo novos ou alterados saem nos dois idiomas.
 
+
+### 2026-11-26 — Fonte 006 (Skills over MCP)
+
+- Alexandre aprovou processar agora o artigo oficial da Anthropic (24/11) sobre Skills over MCP, Tasks, Elicitation e File Uploads, apesar da cota semanal alta.
+- Tema `ambos`: skill `usar-skills-pelo-mcp` (usuario) e guia `claude-app/guias/skills-pelo-mcp.md` (app-claude), com espelho en-US (`use-mcp-skills`, `guides/skills-over-mcp.md`). Status `parcial`.
+- Divergências registradas na nota: o artigo ainda diz “em breve no Enterprise”, a tabela oficial já lista Team e Enterprise como Admin-enabled; a doc cita v2.1.331+, o changelog anuncia o recurso na 2.1.332; File Uploads “em rollout” no artigo e já documentado em beta com restrições.
 ## Como retomar uma sessão
 
 1. Ler este arquivo (incluindo a seção Premissas) e a última entrada do diário.

@@ -36,3 +36,4 @@ Unlike `claude/`, there is **no install by copying files** here: Claude Code rea
 ## Guides today
 
 - [`guides/install-artifact-as-app.md`](guides/install-artifact-as-app.md) — install an artifact as an app in Claude for Mac and Windows, with permissions, limits and quota (source 003, not tested). pt-BR: `claude-app/guias/instalar-artifact-como-app.md`.
+- [`guides/skills-over-mcp.md`](guides/skills-over-mcp.md) — skills, Tasks and Elicitation shipped by the MCP connector, with plans, where the article and the official docs diverge, and File Uploads still rolling out (source 006, not tested). pt-BR: `claude-app/guias/skills-pelo-mcp.md`.
