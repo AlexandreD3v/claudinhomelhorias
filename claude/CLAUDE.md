@@ -1,3 +1,11 @@
+<!--
+Destino de instalação: escolha ao copiar.
+  - projeto: convenções do repositório de destino em ./CLAUDE.md ou ./.claude/CLAUDE.md
+  - usuario: preferências pessoais em ~/.claude/CLAUDE.md
+Este starter mistura os dois tipos de orientação; não copie o arquivo inteiro
+para os dois lugares. Separe os trechos na hora de instalar.
+-->
+
 # Starter de CLAUDE.md
 
 Instruções curtas para colar (com critério) no `CLAUDE.md` de um projeto ou em `~/.claude/CLAUDE.md`. Não substitua um arquivo já afiado: incorpore só o que ainda não está lá.

@@ -16,12 +16,13 @@ Um parágrafo com o que o texto realmente ensina de útil para o Claude Code.
 - **Ação:**
 - **Quando importa:**
 - **Tipo de artefato:** skill | trecho-claude-md | regra | agente | hook | settings | estilo | mcp | comando | nenhum
+- **Destino de instalação:** projeto | usuario | — (se o tipo for nenhum)
 - **Seção de origem:** (nome da seção, não um recorte longo)
 - **Conferido na doc oficial:** sim/não — link
 
 ## Artefatos gerados
 
-- `claude/...` — uma linha do que faz
+- `claude/...` — destino: `projeto` ou `usuario` — uma linha do que faz
 
 ## Duplicatas e reuso
 
@@ -31,6 +32,10 @@ O que já existia neste repo e foi só estendido, ou por que é inédito.
 
 Se o site afirmar um caminho ou frontmatter diferente do oficial, descreva aqui. O artefato deve seguir o oficial.
 
+## Conflitos entre fontes
+
+Se esta página discordar de outra fonte (oficial ou não), descreva **os dois lados** aqui, sem escolher silenciosamente. Uma recomendação (por exemplo, seguir a doc oficial vigente) pode aparecer, mas os dois lados permanecem visíveis.
+
 ## Pendências
 
-O que ficou para depois, se o status não for `publicado`.
+O que ficou para depois, se o status não for `publicado` (teste no Claude Code, push no GitHub, captura incompleta, etc.).

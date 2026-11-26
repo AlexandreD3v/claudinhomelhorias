@@ -12,10 +12,13 @@ argument-hint: "[url]"
 # paths:
 #   - "src/**/*.ts"
 metadata:
+  destino: projeto
   fonte: "NNN"
   url: "https://exemplo.invalid/pagina"
   acesso: "AAAA-MM-DD"
 ---
+
+<!-- destino: projeto = .claude/skills/  |  usuario = ~/.claude/skills/ -->
 
 # Nome da skill
 

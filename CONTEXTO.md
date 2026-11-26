@@ -2,13 +2,13 @@
 
 Este arquivo é o contexto persistente do repositório. Qualquer sessão futura deve lê-lo **antes** de processar um site novo, e atualizá-lo quando uma decisão ou convenção mudar.
 
-Última atualização: 25 de novembro de 2026, 21:00 (America/Sao_Paulo).
+Última atualização: 25 de novembro de 2026, 21:51 (America/Sao_Paulo).
 
 ## Objetivo
 
 Ler sites (links enviados por Alexandre) sobre Claude e Claude Code da Anthropic e transformá-los em instruções úteis para **aperfeiçoar o uso do Claude Code**. O passo a passo e todos os arquivos gerados vivem neste repositório: [AlexandreD3v/claudinhomelhorias](https://github.com/AlexandreD3v/claudinhomelhorias).
 
-Ainda não processamos o primeiro site. Esta montagem inicial só prepara o processo, o contexto e o esqueleto de artefatos.
+Ainda não processamos o primeiro site. O processo, as premissas e o guia de análise já estão prontos para o primeiro link.
 
 ## Perfil relevante
 
@@ -16,22 +16,51 @@ Ainda não processamos o primeiro site. Esta montagem inicial só prepara o proc
 - Idioma de trabalho neste repo: pt-BR.
 - GitHub: [AlexandreD3v](https://github.com/AlexandreD3v).
 - Contexto profissional útil para exemplos futuros (não inventar artefatos NetSuite sem fonte): desenvolvimento NetSuite / SuiteScript, atua na Qlik, mantém o SuiteScript Toolkit, transição para PJ.
-- Uso pretendido dos artefatos: um projeto específico ou `~/.claude` (todos os projetos), conforme fizer sentido.
+- Uso pretendido dos artefatos: um projeto (`.claude/`) ou `~/.claude` (todos os projetos). Cada artefato declara o destino explicitamente (`projeto` ou `usuario`).
 
 ## Convenções
 
 - Textos em português brasileiro. Nomes de arquivos, skills, comandos e agentes em kebab-case ASCII (`processar-fonte`, não `processarFonte` nem `processar_fonte`).
 - Numeração de fontes: `001`, `002`, … (três dígitos). Slug curto derivado do título ou do domínio, sem acento.
 - Arquivo de notas: `fontes/NNN-slug.md`, criado a partir de `templates/fonte.md`.
-- Artefatos instaláveis: sempre em `claude/`, no subdiretório do tipo. Cada artefato cita a fonte (`NNN` + URL) no próprio arquivo ou no frontmatter `metadata`.
+- Artefatos instaláveis: sempre em `claude/`, no subdiretório do tipo. Cada artefato cita a fonte (`NNN` + URL) e declara o **destino de instalação**: `projeto` (`.claude/` do projeto, ou `./CLAUDE.md` / `./.mcp.json` na raiz) ou `usuario` (`~/.claude/`, ou `~/.claude.json` para MCP pessoal). Convenção do campo: `templates/README.md`.
 - Preferir skill a comando avulso para trabalho novo. Manter `.claude/commands/` só quando o usuário já tiver esse hábito ou o material da fonte for claramente um atalho de uma linha.
 - `CLAUDE.md` (projeto ou usuário) fica curto, concreto e só com o que o Claude não descobre lendo o repositório. Alvo oficial: menos de 200 linhas por arquivo. Procedimento de vários passos vai para skill. Instrução que vale só para certos arquivos vai para `.claude/rules/` com `paths`.
 - O que não pode falhar (nunca ler `.env`, sempre formatar, nunca editar pasta gerada) vira hook, `permissions.deny` ou setting gerenciado — não uma linha de `CLAUDE.md`.
 - Não duplicar artefato existente: antes de gravar, procurar em `claude/` e no índice. Se for aprimoramento, edite o artefato e registre a fonte adicional.
 - Não colar texto substancial de artigos protegidos. Resumir, extrair o acionável e citar a URL.
 - Conferir caminhos, frontmatter e formato na documentação oficial vigente (links em `referencias/praticas-oficiais.md`) antes de gravar.
-- Commits na branch padrão `main`, com mensagens claras em pt-BR. Este é um repositório pessoal; commits diretos são o modo de trabalho combinado.
+- Commits na branch padrão `main`, com mensagens claras em pt-BR. Uma fonte isolada gera um commit; vários links de uma vez geram **um único commit para o lote**. Este é um repositório pessoal; commits diretos são o modo de trabalho combinado. O status `publicado` só vale depois do push no GitHub.
 - Datas neste repo, quando forem locais, usam o fuso **America/Sao_Paulo** e deixam o fuso explícito.
+
+## Premissas
+
+Premissas vigentes, confirmadas por Alexandre em **25 de novembro de 2026** (America/Sao_Paulo), inclusive as que estavam em aberto. Qualquer mudança futura entra no diário e nesta seção.
+
+### Combinadas
+
+- **Objetivo.** Transformar sites indicados por Alexandre sobre Claude e Claude Code (Anthropic) em instruções úteis para aperfeiçoar o uso do Claude Code. O processo e todos os arquivos gerados vivem em [AlexandreD3v/claudinhomelhorias](https://github.com/AlexandreD3v/claudinhomelhorias).
+- **Público.** Alexandre Jackson Correa. Os artefatos servem ao uso dele no Claude Code. Cada um declara se a instalação é no projeto (`.claude/`) ou em `~/.claude`. O contexto profissional (NetSuite / SuiteScript, Qlik, SuiteScript Toolkit, transição para PJ) informa exemplos futuros; não se inventa artefato NetSuite sem fonte.
+- **Idioma.** Textos do repositório em pt-BR. Nomes de arquivos, skills, comandos e agentes em kebab-case ASCII.
+- **Onde os artefatos vivem.** Pacote instalável canônico em `claude/`, no subdiretório do tipo. A pasta `.claude/` deste repo é só ponte para carregar skills/agentes/estilos daqui (e via `--add-dir`). A instalação em outro lugar segue o campo `destino` do artefato (`projeto` ou `usuario`) e o README de instalação.
+- **Tipos de artefato.** Trecho de `CLAUDE.md`, regra (`paths`), skill (preferida para trabalho novo), comando legado, subagente, estilo de saída, hook e/ou `permissions.deny`/settings, MCP, plugin (só se houver pacote de verdade). Classificação e destinos: tabela em [`GUIA-ANALISE-SITE.md`](GUIA-ANALISE-SITE.md).
+- **Oficial prevalece no formato.** Caminhos, frontmatter e comportamento do produto seguem a documentação oficial vigente (`code.claude.com`, atalhos em `referencias/praticas-oficiais.md`). Dica de blog que contradisser o oficial não dita o artefato; a divergência vai para a nota. Fluxo extraoficial acionável que não contradiz o oficial pode ser gravado, com atribuição, sem ser apresentado como doc da Anthropic.
+- **Citação e direitos autorais.** Cada artefato e a nota da fonte citam `NNN`, URL e data de acesso (America/Sao_Paulo). Não se cola texto substancial de artigo protegido: resume-se, extrai-se o acionável e aponta-se a seção.
+- **Deduplicação.** Antes de gravar, busca-se em `claude/` e no índice. Aprimoramento edita o artefato existente e registra a fonte adicional.
+- **Qualidade.** Artefato só entra se for conciso, acionável, conferido no oficial, sem duplicata, com atribuição, sem cópia substancial e instalável (critérios em [`PROCESSO.md`](PROCESSO.md)).
+- **Captura incompleta.** Paywall, login, bloqueio, vídeo sem transcrição ou PDF inacessível: não se inventa o conteúdo; pede-se recorte ou outro acesso ao Alexandre.
+- **Versionamento.** Repositório pessoal; commits diretos em `main`, mensagens em pt-BR. Uma fonte isolada gera um commit; vários links enviados de uma vez geram um único commit para o lote. Datas locais com fuso America/Sao_Paulo explícito.
+- **“Pronto” para uma fonte.** Nota completa, índice atualizado, artefatos (se houver) com destino declarado e validados, relatório no formato do guia, commit em `main` e, para status `publicado`, **push no GitHub**. Sem teste no Claude Code, a fonte permanece `parcial`. Fonte `descartada` ainda assim ganha commit (nota + índice).
+
+### Confirmadas por Alexandre em 25 de novembro de 2026
+
+- **Links vizinhos.** Se o site for sobretudo sobre Cursor, outro agente ou prompting genérico, extrair **só o que se aplica ao Claude Code**. Não recusar o link de cara e não forçar artefato fora de escopo.
+- **Destino de instalação.** Cada artefato indica explicitamente se vai no projeto (`.claude/`, ou `./CLAUDE.md` / `./.mcp.json` na raiz) ou em `~/.claude` (ou `~/.claude.json` para MCP pessoal). O campo é obrigatório nos templates e nos artefatos; valores: `projeto` ou `usuario`.
+- **Status `publicado`.** Só depois do push no GitHub. Commit local não basta. Enquanto o push estiver pendente, a fonte não vai para `publicado` (fica `parcial` se o restante já estiver pronto).
+- **Conflito entre fontes.** Mostrar os dois lados no relatório e na nota da fonte, **sem escolher silenciosamente**. Pode-se recomendar o alinhamento com a documentação oficial vigente, mas os dois lados permanecem visíveis.
+- **Artefato não testado no Claude Code.** A checagem mecânica (frontmatter, JSON, `bash -n`) é sempre obrigatória. Se o artefato ainda não foi testado numa sessão do Claude Code, a fonte fica `parcial` até o teste.
+- **Vários links de uma vez.** Um commit só para o lote (todas as fontes daquele pedido), não um commit por link.
+- **Fonte descartada.** Reservar o número e commitar a nota e o índice mesmo assim, para o motivo do descarte não se perder.
 
 ## Estado do repositório na montagem
 
@@ -50,9 +79,27 @@ Ainda não processamos o primeiro site. Esta montagem inicial só prepara o proc
 - Foi incluída a skill `processar-fonte` e o subagente `extrator-fonte` para o próprio pipeline — não vêm de um site externo, vêm deste processo.
 - O `CLAUDE.md` de `claude/` é um starter curto inspirado nas práticas oficiais, para copiar com critério para um projeto ou para `~/.claude/CLAUDE.md`. O `CLAUDE.md` da raiz vale só para trabalhar **neste** repositório.
 
+### 2026-11-25 — Premissas e guia de análise (antes do primeiro link)
+
+- Alexandre pediu para confirmar as premissas e ter um artefato com o passo a passo de análise de um site, ainda antes do primeiro link.
+- As premissas foram extraídas de `CONTEXTO.md`, `PROCESSO.md` e da pesquisa oficial de 25 de novembro de 2026, e listadas na seção Premissas deste arquivo. Ainda nesta data, Alexandre confirmou as que estavam em aberto (entrada seguinte do diário).
+- O passo a passo operacional passou a viver em [`GUIA-ANALISE-SITE.md`](GUIA-ANALISE-SITE.md). `PROCESSO.md` ficou como contrato curto e aponta para o guia, para não haver dois fluxos divergentes.
+- O conteúdo da montagem inicial foi publicado no GitHub em `aac9603` (sobre um commit de README do dono). O histórico git deste checkout local diverge; o conteúdo dos arquivos é o mesmo.
+
+### 2026-11-25 — Premissas em aberto confirmadas por Alexandre
+
+- Links vizinhos: extrair só o que se aplica ao Claude Code.
+- Destino de instalação: campo obrigatório em todo artefato e template (`projeto` = `.claude/` do projeto; `usuario` = `~/.claude`).
+- Status `publicado` só depois do push no GitHub; commit local não basta.
+- Conflito entre fontes: mostrar os dois lados na nota e no relatório, sem escolher silenciosamente.
+- Artefato não testado no Claude Code: a fonte fica `parcial` até o teste.
+- Vários links de uma vez: um único commit para o lote.
+- Fonte descartada: commitar nota e índice mesmo assim.
+- O guia, o processo, os templates e a skill `processar-fonte` foram alinhados a essas decisões.
+
 ## Como retomar uma sessão
 
-1. Ler este arquivo e a última seção do diário.
+1. Ler este arquivo (incluindo a seção Premissas) e a última entrada do diário.
 2. Abrir [`fontes/INDICE.md`](fontes/INDICE.md) e ver o que já foi processado ou ficou em andamento.
-3. Seguir [`PROCESSO.md`](PROCESSO.md) para o próximo link.
+3. Seguir [`GUIA-ANALISE-SITE.md`](GUIA-ANALISE-SITE.md) para o próximo link. [`PROCESSO.md`](PROCESSO.md) é o contrato curto (qualidade e estados) e aponta para o guia.
 4. Se a documentação oficial tiver mudado, atualizar `referencias/praticas-oficiais.md` e o diário antes de gravar artefatos com formato novo.

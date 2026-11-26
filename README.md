@@ -2,22 +2,22 @@
 
 Repositório pessoal de **Alexandre Jackson Correa** para transformar artigos e guias sobre [Claude Code](https://code.claude.com/docs/en/overview) (Anthropic) em instruções úteis e instaláveis.
 
-O fluxo é simples: chega um link, o conteúdo é lido, os insights acionáveis são classificados no tipo certo de artefato (trecho de `CLAUDE.md`, skill, comando, subagente, hook, setting, regra, estilo de saída ou MCP) e o resultado fica versionado aqui, pronto para copiar para um projeto ou para `~/.claude`.
+O fluxo é simples: chega um link, o conteúdo é lido, os insights acionáveis são classificados no tipo certo de artefato (trecho de `CLAUDE.md`, skill, comando, subagente, hook, setting, regra, estilo de saída ou MCP) e o resultado fica versionado aqui. Cada artefato declara o destino de instalação (`projeto` = `.claude/` do projeto, ou `usuario` = `~/.claude`).
 
 Todo o material deste repositório é escrito em **pt-BR**. Nomes de skills, comandos e agentes usam kebab-case ASCII, porque o Claude Code pode recusar caracteres especiais no nome.
 
 ## Como usar
 
-1. Abra este repositório no Claude Code (ou peça a um assistente para seguir [`PROCESSO.md`](PROCESSO.md)).
+1. Abra este repositório no Claude Code (ou peça a um assistente para seguir [`GUIA-ANALISE-SITE.md`](GUIA-ANALISE-SITE.md)).
 2. Envie o link do site.
-3. O assistente captura a fonte em `fontes/`, extrai o que dá para aplicar, confere o formato na [documentação oficial](https://code.claude.com/docs/en/overview), grava o artefato em `claude/` e atualiza o índice.
-4. Você instala só o que quiser, no escopo certo (um projeto ou todos).
+3. O assistente segue o guia: captura a fonte em `fontes/`, lê e avalia credibilidade, extrai o que dá para aplicar, confere o formato na [documentação oficial](https://code.claude.com/docs/en/overview), grava o artefato em `claude/`, valida e atualiza o índice.
+4. Você instala cada artefato no destino que ele declara (`projeto` ou `usuario`).
 
-Antes de processar o primeiro site, leia [`CONTEXTO.md`](CONTEXTO.md) (contexto persistente da sessão) e [`PROCESSO.md`](PROCESSO.md) (pipeline passo a passo).
+Antes de processar o primeiro site, leia [`CONTEXTO.md`](CONTEXTO.md) (premissas e contexto persistente) e [`GUIA-ANALISE-SITE.md`](GUIA-ANALISE-SITE.md) (passo a passo). [`PROCESSO.md`](PROCESSO.md) é o contrato curto de qualidade e aponta para o guia.
 
 ## Instalar os artefatos
 
-Os arquivos em `claude/` espelham o layout de `.claude/`, com um `CLAUDE.md` inicial à parte. O Claude Code **não** lê a pasta `claude/` automaticamente. Copie (ou faça um symlink) para o destino correspondente.
+Os arquivos em `claude/` espelham o layout de `.claude/`, com um `CLAUDE.md` inicial à parte. O Claude Code **não** lê a pasta `claude/` automaticamente. Copie (ou faça um symlink) para o destino declarado no artefato (`projeto` ou `usuario`).
 
 ### Em um projeto (compartilhável via git)
 
@@ -62,8 +62,9 @@ Ou, já dentro do Claude Code: `/add-dir /caminho/para/claudinhomelhorias`.
 
 | Caminho | Função |
 | --- | --- |
-| [`CONTEXTO.md`](CONTEXTO.md) | Contexto persistente: objetivo, perfil, convenções, diário de decisões |
-| [`PROCESSO.md`](PROCESSO.md) | Pipeline repetível por site |
+| [`CONTEXTO.md`](CONTEXTO.md) | Contexto persistente: objetivo, perfil, premissas, convenções, diário de decisões |
+| [`GUIA-ANALISE-SITE.md`](GUIA-ANALISE-SITE.md) | Passo a passo operacional para analisar um site (da captura ao relatório) |
+| [`PROCESSO.md`](PROCESSO.md) | Contrato curto (qualidade, estados do índice); aponta para o guia |
 | [`fontes/INDICE.md`](fontes/INDICE.md) | Tabela de sites processados |
 | [`fontes/`](fontes/) | Notas por site (`NNN-slug.md`) |
 | [`claude/`](claude/) | Pacote instalável (espelho de `.claude/`) |

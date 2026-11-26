@@ -1,5 +1,7 @@
 # Hooks
 
+**Destino de instalação dos exemplos desta pasta:** `projeto` (script em `.claude/hooks/` e bloco mesclado em `.claude/settings.json`). O valor está também no cabeçalho de [`exemplo.sh`](exemplo.sh). O JSON de [`bloco-exemplo.json`](bloco-exemplo.json) não leva chave extraoficial, para poder ser mesclado.
+
 O Claude Code **não** carrega esta pasta sozinho. Hooks se declaram no objeto `hooks` de um arquivo de settings (`.claude/settings.json`, `.claude/settings.local.json` ou `~/.claude/settings.json`). Os scripts aqui são o `command` apontado por essa config.
 
 **Guia oficial:** [Automate actions with hooks](https://code.claude.com/docs/en/hooks-guide) e a [referência](https://code.claude.com/docs/en/hooks). Na sessão, confira com `/hooks`.

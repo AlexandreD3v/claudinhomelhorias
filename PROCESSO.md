@@ -1,98 +1,15 @@
 # Processo por site
 
-Pipeline repetível para cada link enviado por Alexandre. Execute os passos na ordem. Não pule a verificação oficial nem a checagem de duplicata.
+Pipeline de cada link enviado por Alexandre. O passo a passo operacional completo — da captura ao relatório — está em [`GUIA-ANALISE-SITE.md`](GUIA-ANALISE-SITE.md). Use esse guia em toda análise; não mantenha um fluxo paralelo.
 
-A skill [`claude/skills/processar-fonte/SKILL.md`](claude/skills/processar-fonte/SKILL.md) é a versão invocável deste processo (`/processar-fonte`). O subagente [`claude/agents/extrator-fonte.md`](claude/agents/extrator-fonte.md) isola a leitura e a extração.
+A skill [`claude/skills/processar-fonte/SKILL.md`](claude/skills/processar-fonte/SKILL.md) (`/processar-fonte`) e o subagente [`claude/agents/extrator-fonte.md`](claude/agents/extrator-fonte.md) seguem o guia. As premissas vigentes (confirmadas em 25 de novembro de 2026) estão em [`CONTEXTO.md`](CONTEXTO.md).
 
 ## Pré-requisitos
 
-- Ter lido [`CONTEXTO.md`](CONTEXTO.md) nesta sessão.
-- Ter à mão a documentação oficial relevante (atalhos em [`referencias/praticas-oficiais.md`](referencias/praticas-oficiais.md)). Se o material da fonte contradisser a documentação oficial sobre caminhos ou frontmatter, **prevalece a documentação oficial**; anote a divergência na nota da fonte.
+- Ter lido `CONTEXTO.md` nesta sessão, inclusive a seção Premissas.
+- Ter à mão a documentação oficial relevante (atalhos em [`referencias/praticas-oficiais.md`](referencias/praticas-oficiais.md)). Se o material da fonte contradisser a documentação oficial sobre caminhos, frontmatter ou comportamento do produto, **prevalece a documentação oficial**; anote a divergência na nota da fonte. Se duas fontes não oficiais discordarem, mostre os **dois lados** na nota e no relatório, sem escolher silenciosamente.
 
-## Passos
-
-### 1. Capturar o link
-
-Anote a URL canônica (sem rastreadores de query, se possível). Defina:
-
-- o próximo número livre em [`fontes/INDICE.md`](fontes/INDICE.md) (`001`, `002`, …);
-- um slug curto em kebab-case ASCII (domínio ou título reduzido).
-
-### 2. Registrar no índice (status inicial)
-
-Adicione uma linha em `fontes/INDICE.md` com status `em andamento` e a data de hoje no fuso America/Sao_Paulo. Assim outra sessão não pega o mesmo número.
-
-### 3. Criar a nota da fonte
-
-Copie [`templates/fonte.md`](templates/fonte.md) para `fontes/NNN-slug.md` e preencha metadados (URL, título, data de acesso, autor se houver).
-
-### 4. Buscar e ler
-
-Leia a página (e só as páginas extras realmente necessárias: um guia pai, um README oficial citado). Não siga uma trilha infinita de links. Se o site bloquear a captura, registre o bloqueio na nota e peça a Alexandre um recorte ou outro acesso — não invente o conteúdo.
-
-### 5. Extrair insights acionáveis
-
-Pergunte, para cada ideia: **isso muda como Alexandre usa o Claude Code de forma concreta?** Descarte marketing, repetição do óbvio e o que já está coberto em `claude/` ou em `referencias/praticas-oficiais.md`.
-
-Para cada insight, anote na nota da fonte:
-
-- o que fazer (ação);
-- quando faz diferença;
-- o tipo de artefato provável;
-- a passagem de origem (parágrafo ou seção, não um recorte longo).
-
-### 6. Classificar o tipo de artefato
-
-Use esta tabela (baseada em [Extend Claude Code](https://code.claude.com/docs/en/features-overview) e nas [melhores práticas](https://code.claude.com/docs/en/best-practices)):
-
-| Se o insight é… | Grave como… | Destino |
-| --- | --- | --- |
-| Fato ou regra curta que deve valer em **toda** sessão (comando de build, convenção, “sempre faça X”) e que o Claude **não** descobre lendo o repo | Trecho de `CLAUDE.md` | `claude/snippets/` e, se for do starter, candidato a `claude/CLAUDE.md` |
-| Instrução que vale só para certos caminhos ou tipos de arquivo | Regra | `claude/rules/<nome>.md` com frontmatter `paths` |
-| Procedimento de vários passos, checklist, material de referência longo ou fluxo que se invoca com `/nome` | Skill | `claude/skills/<nome>/SKILL.md` |
-| Atalho antigo de um único arquivo Markdown (evitar para trabalho novo) | Comando | `claude/commands/<nome>.md` |
-| Trabalho que deve rodar isolado (pesquisa, revisão, extração) e devolver um resumo | Subagente | `claude/agents/<nome>.md` |
-| Tom, papel ou formato de **todas** as respostas da sessão | Estilo de saída | `claude/output-styles/<nome>.md` |
-| Algo que **precisa** acontecer ou ser bloqueado sempre, sem depender do modelo | Hook e/ou `permissions.deny` | script em `claude/hooks/` + bloco em `claude/settings/` |
-| Conexão com ferramenta externa (issue tracker, browser, API) | MCP | `templates/mcp.json` adaptado em `claude/settings/` ou nota de instalação |
-| Conjunto reutilizável de vários dos itens acima para distribuir | Plugin (só se realmente houver pacote) | documentar no índice; não inventar manifesto sem necessidade |
-
-Na dúvida entre `CLAUDE.md` e skill: se for procedimento ou só importar em alguns momentos, vire skill (o corpo só entra no contexto quando usado). Na dúvida entre skill e hook: se “quase sempre” não for suficiente, vire hook ou `deny`.
-
-### 7. Verificar na documentação oficial
-
-Confira caminho, frontmatter e formato no guia oficial do tipo (veja os modelos em `templates/` e a síntese em `referencias/praticas-oficiais.md`). Corrija nomes de campos (hífens, camelCase de agentes como `disallowedTools`, etc.). Não invente chaves.
-
-### 8. Evitar duplicação
-
-Busque em `claude/`, `fontes/INDICE.md` e no `CLAUDE.md` starter. Se já existir o mesmo conselho, una as fontes na nota e, se o artefato melhorar, edite-o no lugar em vez de criar outro.
-
-### 9. Escrever o artefato
-
-- Use o template do tipo em `templates/`.
-- Seja curto e verificável (“rode `npm test` antes do commit”, não “teste suas mudanças”).
-- Cite a fonte (`NNN`, URL, data de acesso) no arquivo.
-- Exemplos devem ser mínimos e válidos (o Claude Code carrega frontmatter inválido como se os campos não existissem).
-
-### 10. Registrar e fechar a fonte
-
-- Complete `fontes/NNN-slug.md` (insights, artefatos gerados, divergências, status).
-- Atualize a linha em `fontes/INDICE.md` (resumo, artefatos, status `publicado` ou `parcial`).
-- Se nasceu uma convenção ou decisão nova, acrescente o diário em `CONTEXTO.md`.
-
-### 11. Commit
-
-Na branch `main`, com mensagem em pt-BR, por exemplo:
-
-```text
-Adiciona fonte 003 (título curto) e skill foo
-
-Lê <url> e extrai o fluxo de /foo como skill, conferido na doc de skills.
-```
-
-Um commit por fonte é o padrão. Se a fonte só gerar uma correção mínima num artefato já existente, a mensagem deve dizer isso.
-
-## Critérios de qualidade
+## Contrato: critérios de qualidade
 
 Um artefato só entra no repositório se atender a todos:
 
@@ -102,20 +19,28 @@ Um artefato só entra no repositório se atender a todos:
 4. **Sem duplicata** — não repete outro artefato nem o starter, salvo união explícita de fontes.
 5. **Com atribuição** — URL e data de acesso rastreadas no índice e na nota.
 6. **Sem cópia substancial** — não reproduz o artigo; resume e aponta.
-7. **Instalável** — o README do tipo em `claude/` explica para onde copiar.
+7. **Instalável** — declara o destino (`projeto` ou `usuario`) e o README do tipo em `claude/` explica para onde copiar.
+
+A validação mecânica é obrigatória. O teste no Claude Code é obrigatório para fechar como `publicado`; sem esse teste, a fonte permanece `parcial` (passo 9 do guia).
 
 ## Estados no índice
 
 | Status | Significado |
 | --- | --- |
 | `em andamento` | Número reservado; leitura ou redação em curso |
-| `publicado` | Nota e artefatos gravados e commitados |
-| `parcial` | Algo útil foi gravado, mas ficou pendência (página incompleta, dúvida de classificação) |
-| `descartado` | O site não rendeu artefato; a nota explica o porquê |
+| `publicado` | Nota e artefatos gravados, testados no Claude Code, commitados em `main` e **já enviados (push) ao GitHub** |
+| `parcial` | Algo útil foi gravado, mas ficou pendência (página incompleta, validação no Claude Code ainda não feita, push pendente, dúvida de classificação) |
+| `descartado` | O site não rendeu artefato; a nota explica o porquê. A nota e o índice **são commitados** mesmo assim |
+
+Vários links no mesmo pedido entram num **único commit de lote**. Uma fonte isolada gera um commit. Fonte descartada também entra nesse commit (ou num commit só dela, se vier sozinha).
 
 ## O que não fazer
 
 - Não gravar artefato “para ter um arquivo” se não houver insight acionável.
 - Não colocar procedimento longo no `CLAUDE.md` starter.
 - Não tratar dica de blog como formato oficial quando a documentação da Anthropic disser outra coisa.
+- Não escolher silenciosamente um lado num conflito entre fontes; mostre os dois na nota e no relatório.
+- Não omitir o destino de instalação (`projeto` ou `usuario`).
+- Não marcar `publicado` antes do push no GitHub, nem enquanto o artefato não tiver sido testado no Claude Code.
+- Não inventar conteúdo de página que não foi possível ler (paywall, bloqueio, vídeo sem transcrição).
 - Não apagar conteúdo existente do repositório para “começar de novo”.

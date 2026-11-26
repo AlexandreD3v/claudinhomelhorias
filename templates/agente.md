@@ -11,11 +11,13 @@ model: inherit
 # isolation: worktree
 # omitClaudeMd: true
 # memory: user
-metadata:
-  fonte: "NNN"
-  url: "https://exemplo.invalid/pagina"
-  acesso: "AAAA-MM-DD"
 ---
+
+**Destino de instalação:** projeto
+
+<!-- Valores: projeto = .claude/agents/  |  usuario = ~/.claude/agents/
+     Não use um campo `metadata` no frontmatter: ele não é oficial em subagentes.
+     Fonte: NNN — URL — acesso AAAA-MM-DD (America/Sao_Paulo) -->
 
 Você é um especialista em …. Ao ser invocado:
 

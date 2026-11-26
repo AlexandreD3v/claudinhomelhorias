@@ -1,5 +1,8 @@
 # Settings
 
+**Destino de instalação de [`settings.exemplo.json`](settings.exemplo.json):** as chaves de exemplo se separam na hora de copiar — `permissions.deny` para `.env` vai em `projeto` (`.claude/settings.json`); `outputStyle: conciso-ptbr` vai em `usuario` (`~/.claude/settings.json`), porque o estilo é preferência pessoal. Não copie o arquivo inteiro para os dois lugares. O JSON não leva chave extraoficial.
+
+
 Arquivos JSON que o Claude Code **aplica** (permissões, hooks, `outputStyle`, variáveis de ambiente, modelo). Diferente do `CLAUDE.md`, isto não é só orientação ao modelo.
 
 **Onde vive:**

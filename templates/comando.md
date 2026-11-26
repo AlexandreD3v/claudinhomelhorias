@@ -5,10 +5,13 @@ description: >
 argument-hint: "[argumento]"
 # disable-model-invocation: true
 metadata:
+  destino: projeto
   fonte: "NNN"
   url: "https://exemplo.invalid/pagina"
   acesso: "AAAA-MM-DD"
 ---
+
+<!-- destino: projeto = .claude/commands/  |  usuario = ~/.claude/commands/ -->
 
 Instruções do comando. Preferir uma skill em `claude/skills/<nome>/SKILL.md` para trabalho novo;
 este formato existe porque `.claude/commands/` ainda é suportado.
