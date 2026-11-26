@@ -1,0 +1,21 @@
+# Source index
+
+US English mirror of [`fontes/INDICE.md`](../../fontes/INDICE.md) (pt-BR, canonical). Each processed site gets a sequential number, a note in `sources/NNN-slug.md` and a row in this table. Note template: [`templates/source.md`](../templates/source.md).
+
+Possible statuses (kept in pt-BR, as in the repository): `em andamento` (in progress), `publicado` (published: only after the GitHub push and the test in Claude Code or the Claude app, depending on the theme), `parcial` (partial), `descartado` (discarded). They are defined in [`PROCESS.md`](../PROCESS.md). The analysis steps are in [`SITE-ANALYSIS-GUIDE.md`](../SITE-ANALYSIS-GUIDE.md).
+
+Dates in the "Accessed" column are in the **America/Sao_Paulo** time zone.
+
+`Tema` column: `claude-code` (artifacts in [`claude/`](../claude/)), `claude-app` (artifacts in [`claude-app/`](../claude-app/)) or `ambos` (both). Only what serves neither is discarded.
+
+| # | Accessed | URL | Title | Tema | Summary | Artifacts (en-US) | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| [001](001-xda-usage-limits-sessions.md) | 2026-11-25 22:03 | https://www.xda-developers.com/i-stopped-hitting-claudes-usage-limits-after-changing-one-habit-in-how-i-start-sessions/ | I stopped hitting Claude's usage limits after changing one habit in how I start sessions | claude-code | XDA article on stretching the Pro plan with the `opusplan` alias (Opus for the plan, Sonnet for execution). The title talks about a session-start habit, but the body does not teach `/clear`. | `en-us/claude/skills/use-opusplan/SKILL.md` (user); `en-us/claude/settings/opusplan.example.json` (user, optional) | parcial |
+| [002](002-marktechpost-code-mode.md) | 2026-11-25 23:16 | https://www.marktechpost.com/2026/11/17/anthropic-claude-code-code-mode-javascript-tool-calls/ | Anthropic Adds Code Mode to Claude Code: Claude Now Chains Tool Calls in JavaScript | claude-code | Summary of the experimental Code Mode (v2.1.323+): Claude writes JavaScript that chains several tool calls. The article's cloud-provider and telemetry availability (Nov 17) is already outdated against the current official docs. | `en-us/claude/skills/use-code-mode/SKILL.md` (user); `en-us/claude/settings/code-mode.example.json` (user, opt-in) | parcial |
+| [003](003-9to5mac-install-as-app.md) | 2026-11-26 08:20 | https://9to5mac.com/2026/11/24/anthropic-just-gave-claude-users-a-new-way-to-make-mac-apps/ | Anthropic just gave Claude users a new way to make Mac apps | claude-app | 9to5Mac article on the "Install as app" beta in Claude for Mac and Windows (artifacts become desktop apps). Outside Claude Code, but within the Claude app scope: reprocessed against the official docs and turned into a guide. | `en-us/claude-app/guides/install-artifact-as-app.md` (app-claude) | parcial |
+| [004](004-xda-instructions-out-of-session.md) | 2026-11-26 08:38 | https://www.xda-developers.com/cut-claude-token-use-in-half-moving-instructions-out-of-main-session/ | I cut my Claude token use in half by moving instructions out of the main session | claude-code | XDA report: lean CLAUDE.md, a CLAUDE.md per folder, skills and subagents to move instructions and noise out of the main session. The official docs confirm the core, but an `@` import does not save context and the title's "half" is not measured. | `en-us/claude/skills/trim-context/SKILL.md` (user); starter `en-us/claude/CLAUDE.md` | parcial |
+| [005](005-xda-shared-handoff-folder.md) | 2026-11-26 08:38 | https://www.xda-developers.com/stopped-choosing-between-claude-code-codex-antigravity-one-shared-folder-lets-them-pick-up-each-others-work/ | I stopped choosing between Claude Code, Codex, and Antigravity, and one shared folder lets them pick up each other's work | claude-code | XDA report: shared AGENTS.md, HANDOFF.md and DECISIONS.md in a folder several agents open. Only what serves Claude Code is taken from the article; the official docs have read AGENTS.md natively since v2.1.277. | `en-us/claude/snippets/share-agents-md.md` (project); `en-us/claude/skills/write-handoff/` (project) | parcial |
+
+The pt-BR paths of each artifact are in the canonical index and in the name map of [`USAGE.md`](../USAGE.md#name-map), which also has the per-source "how to use".
+
+Next free number: **006** (same numbering in both languages).
