@@ -13,7 +13,7 @@ Every installable artifact exists in two versions, kept in sync:
 
 The English skills, agents and output style have different names (for example `usar-opusplan` → `use-opusplan`), so both versions can be installed side by side in `~/.claude/` without colliding. The full name map and a method to compare the two versions (tokens in `/context`, adherence, quality) are in [`en-us/USAGE.md`](en-us/USAGE.md).
 
-The analysis notes ([`fontes/`](fontes/)), the process files ([`GUIA-ANALISE-SITE.md`](GUIA-ANALISE-SITE.md), [`PROCESSO.md`](PROCESSO.md), [`CONTEXTO.md`](CONTEXTO.md)) and the [`templates/`](templates/) stay in pt-BR only.
+The analysis notes and the process files are also translated, in the same `en-us/` folder: [`sources/`](en-us/sources/) (notes and [`INDEX.md`](en-us/sources/INDEX.md)), [`SITE-ANALYSIS-GUIDE.md`](en-us/SITE-ANALYSIS-GUIDE.md), [`CONTEXT.md`](en-us/CONTEXT.md), [`PROCESS.md`](en-us/PROCESS.md), [`templates/`](en-us/templates/), [`references/official-practices.md`](en-us/references/official-practices.md) and [`CLAUDE.en-US.md`](en-us/CLAUDE.en-US.md) (the root `CLAUDE.md`). pt-BR stays canonical; the full path map is in [`en-us/README.md`](en-us/README.md).
 
 ## How it works
 
@@ -42,4 +42,4 @@ Merge settings and hooks into existing files instead of overwriting them, and co
 | 004 | XDA — instructions out of the main session | claude-code | skill `trim-context`, starter `CLAUDE.md` |
 | 005 | XDA — one shared folder for several agents | claude-code | snippet `share-agents-md`, skill `write-handoff` |
 
-All of them are `parcial`: none has been tested in Claude Code or the Claude app yet. Details (pt-BR): [`fontes/INDICE.md`](fontes/INDICE.md).
+All of them are `parcial`: none has been tested in Claude Code or the Claude app yet. Details: [`en-us/sources/INDEX.md`](en-us/sources/INDEX.md) (pt-BR: [`fontes/INDICE.md`](fontes/INDICE.md)).

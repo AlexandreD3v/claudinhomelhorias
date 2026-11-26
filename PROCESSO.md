@@ -20,7 +20,7 @@ Um artefato só entra no repositório se atender a todos:
 5. **Com atribuição** — URL e data de acesso rastreadas no índice e na nota.
 6. **Sem cópia substancial** — não reproduz o artigo; resume e aponta.
 7. **Instalável ou utilizável** — declara o destino: `projeto` ou `usuario` em `claude/` (o README do tipo explica para onde copiar); `app-claude`, `projeto-claudeai` ou `configuracoes` em `claude-app/` (o README da pasta explica onde ler ou colar).
-8. **Bilíngue e com “como usar”** — sai em pt-BR e em en-US (espelho em `en-us/`, com `name` em inglês diferente) e tem a seção da fonte em `USO.md` e `en-us/USAGE.md` (passos 8 a 10 do guia).
+8. **Bilíngue e com “como usar”** — sai em pt-BR e em en-US (espelho em `en-us/`, com `name` em inglês diferente) e tem a seção da fonte em `USO.md` e `en-us/USAGE.md` (passos 8 a 10 do guia). A nota da fonte, a linha do índice e qualquer arquivo de processo alterado também ganham a versão en-US em `en-us/`.
 
 A validação mecânica é obrigatória. O teste é obrigatório para fechar como `publicado` — no Claude Code para artefatos de `claude/`, no app Claude para artefatos de `claude-app/`; sem esse teste, a fonte permanece `parcial` (passo 9 do guia).
 

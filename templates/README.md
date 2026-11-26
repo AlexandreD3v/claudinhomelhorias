@@ -23,7 +23,7 @@ Para o app Claude (`claude-app/`) os valores são `app-claude`, `projeto-claudea
 
 ## Versão en-US
 
-Os modelos ficam em pt-BR. Ao gravar um artefato, grave também o espelho en-US em `en-us/` (mesmo caminho relativo, `name` em inglês diferente, destino em `metadata.destination` com `project` ou `user` nas skills e comandos, ou na linha `**Install destination:**` nos demais tipos). Regra completa no passo 8 do [guia](../GUIA-ANALISE-SITE.md).
+Os modelos ficam em pt-BR. Ao gravar um artefato, grave também o espelho en-US em `en-us/` (mesmo caminho relativo, `name` em inglês diferente, destino em `metadata.destination` com `project` ou `user` nas skills e comandos, ou na linha `**Install destination:**` nos demais tipos). A nota da fonte também ganha versão en-US em `en-us/sources/`, a partir de [`en-us/templates/source.md`](../en-us/templates/source.md). Regra completa nos passos 8 a 10 do [guia](../GUIA-ANALISE-SITE.md).
 
 ## Modelos
 

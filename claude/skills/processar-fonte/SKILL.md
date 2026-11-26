@@ -25,7 +25,7 @@ metadata:
 
 Canonical: siga `GUIA-ANALISE-SITE.md` na raiz do repositório **claudinhomelhorias** (https://github.com/AlexandreD3v/claudinhomelhorias). `PROCESSO.md` é só o contrato de qualidade e estados do índice; `CONTEXTO.md` traz as premissas confirmadas em 25 e 26 de novembro de 2026 (inclusive o escopo do app Claude). Este texto resume o fluxo para a skill funcionar mesmo com `--add-dir`. Trabalhe no checkout desse repositório; não grave os artefatos no projeto errado.
 
-Idioma dos arquivos gerados: **pt-BR**, e todo artefato instalável sai também em **en-US** no espelho `en-us/claude/` ou `en-us/claude-app/`, com `name` em inglês diferente (versão en-US desta skill: `process-source`). Nomes de skill/agente/comando: kebab-case ASCII. Datas: fuso America/Sao_Paulo.
+Idioma dos arquivos gerados: **pt-BR**, e todo artefato instalável sai também em **en-US** no espelho `en-us/claude/` ou `en-us/claude-app/`, com `name` em inglês diferente (versão en-US desta skill: `process-source`). Notas, índice e arquivos de processo novos ou alterados também saem em en-US em `en-us/`. Nomes de skill/agente/comando: kebab-case ASCII. Datas: fuso America/Sao_Paulo.
 
 ## Entrada
 
@@ -44,7 +44,7 @@ Siga os doze passos do guia, neste resumo:
 7. Classifique com as tabelas do guia (Claude Code: trecho de CLAUDE.md, regra, skill, comando legado, subagente, estilo, hook/settings, MCP, plugin; app Claude: guia, instrução de projeto, estilo, prompt, configuração; ou nenhum).
 8. Grave em `claude/` ou em `claude-app/` com o template de `templates/`, citação da fonte e **destino** no lugar certo do tipo (`projeto` ou `usuario`; no app, `app-claude`, `projeto-claudeai` ou `configuracoes`), exemplos válidos. Grave o espelho en-US em `en-us/` com nome em inglês sem colisão e atualize `USO.md` e `en-us/USAGE.md` (o que faz, instalação, invocação, teste). Atualize a cópia em `.claude/` se o pipeline deste repo depender do artefato do Claude Code (`claude-app/` não tem cópia).
 9. Valide os dois idiomas: frontmatter na primeira linha, `python3 -m json.tool` em JSON, `bash -n` em hooks, destino declarado, nomes sem colisão. Teste no Claude Code (`/doctor` ou invocação) ou, para `claude-app/`, no app Claude. Sem esse teste, a fonte permanece `parcial`.
-10. Feche a nota e o índice. `publicado` só depois do teste (Claude Code ou app Claude) **e** do push no GitHub. Fonte `descartada` (não serve a nenhum dos dois) ainda assim tem nota, índice e commit. Preencha a coluna `Tema` do índice. Atualize o diário de `CONTEXTO.md` se nascer uma decisão nova.
+10. Feche a nota e o índice. `publicado` só depois do teste (Claude Code ou app Claude) **e** do push no GitHub. Fonte `descartada` (não serve a nenhum dos dois) ainda assim tem nota, índice e commit. Preencha a coluna `Tema` do índice. Grave também a nota en-US em `en-us/sources/` e a linha de `en-us/sources/INDEX.md`; se mudou um arquivo de processo, atualize o equivalente en-US no mesmo commit. Atualize o diário de `CONTEXTO.md` se nascer uma decisão nova.
 11. Commit em `main` com mensagem clara em pt-BR: um por fonte isolada, ou um só para o lote. Depois faça o push; sem push, não marque `publicado`.
 12. Entregue o relatório no formato da seção 12 do guia (incluindo destino, conflitos com os dois lados, teste e push).
 

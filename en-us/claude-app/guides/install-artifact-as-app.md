@@ -20,7 +20,7 @@
 - **Plans:** Free, Pro, Max, Ultra, Team and Enterprise (beta rollout).
   - **Team:** on by default; the "full access to the computer" level stays off until an admin turns it on.
   - **Enterprise:** everything off until an owner turns it on in Organization settings > Artifacts. The admin guide asks for "Cloud code execution and file creation" to be on first, in Organization settings > Capabilities.
-- **Not available:** Linux, web and mobile; organizations with a HIPAA-ready setup and with a hybrid deployment (the disagreement between the official pages is in the [source 003 note](../../../fontes/003-9to5mac-install-as-app.md), pt-BR); full access on Claude for Teachers and K-12 organizations.
+- **Not available:** Linux, web and mobile; organizations with a HIPAA-ready setup and with a hybrid deployment (the disagreement between the official pages is in the [source 003 note](../../sources/003-9to5mac-install-as-app.md)); full access on Claude for Teachers and K-12 organizations.
 - **Artifacts that do not install:** those created from templates (Docs, Slides, Sheets), legacy artifacts and Claude Cowork live artifacts.
 
 If the "Install as app" item does not show up: update the app; on Team or Enterprise, ask an owner to check that it is on.
@@ -71,7 +71,7 @@ The levels, in Anthropic's words: default (only what a browser would do), app pe
 
 ## Shared quota
 
-Creating an app and **every request the app makes to Claude** count toward your plan's usage limits. The app uses your account, with no API key or separate login. Plan limits are shared between the Claude app and Claude Code (see the [source 001 note](../../../fontes/001-xda-limites-uso-sessoes.md), pt-BR). An app that calls Claude in the background, such as one with a menu bar item, also spends quota while it runs.
+Creating an app and **every request the app makes to Claude** count toward your plan's usage limits. The app uses your account, with no API key or separate login. Plan limits are shared between the Claude app and Claude Code (see the [source 001 note](../../sources/001-xda-usage-limits-sessions.md)). An app that calls Claude in the background, such as one with a menu bar item, also spends quota while it runs.
 
 ## Good practices
 

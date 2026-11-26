@@ -1,8 +1,8 @@
 # How to use the artifacts (en-US)
 
-A short guide for people who just want to install and use, without reading the analysis notes. One section per source: what it does, where to install it (with the copy command), how to invoke it and how to test it. The Portuguese version, with the same artifacts, is [`USO.md`](../USO.md).
+A short guide for people who just want to install and use, without reading the analysis notes. One section per source: what it does, where to install it (with the copy command), how to invoke it and how to test it. The Portuguese version, with the same artifacts, is [`USO.md`](../USO.md). The analysis notes behind each section are in [`sources/`](sources/).
 
-Nothing here has been tested in Claude Code or in the Claude app yet: every source is `parcial` (partial) in the [index](../fontes/INDICE.md) (pt-BR). If a step does not work as described, note the version (`claude --version`) and report it.
+Nothing here has been tested in Claude Code or in the Claude app yet: every source is `parcial` (partial) in the [index](sources/INDEX.md). If a step does not work as described, note the version (`claude --version`) and report it.
 
 The commands assume the repository is cloned at `~/claudinhomelhorias`:
 
@@ -86,7 +86,7 @@ The English names differ on purpose: both versions can be installed together in 
 
 ## The repository's own tools
 
-They do not come from an external source; they serve the pipeline. `process-source` (skill, user) and `source-extractor` (subagent, user) process a new link following the [guide](../GUIA-ANALISE-SITE.md) (pt-BR): install with `cp -R "$REPO/en-us/claude/skills/process-source" ~/.claude/skills/` and `cp "$REPO/en-us/claude/agents/source-extractor.md" ~/.claude/agents/`, and invoke with `/process-source <url>` in this repository's checkout. The `concise-en-us` style (user) goes into `~/.claude/output-styles/` and is turned on with `/output-style` or `"outputStyle": "concise-en-us"` in settings.
+They do not come from an external source; they serve the pipeline. `process-source` (skill, user) and `source-extractor` (subagent, user) process a new link following the [guide](SITE-ANALYSIS-GUIDE.md): install with `cp -R "$REPO/en-us/claude/skills/process-source" ~/.claude/skills/` and `cp "$REPO/en-us/claude/agents/source-extractor.md" ~/.claude/agents/`, and invoke with `/process-source <url>` in this repository's checkout. The `concise-en-us` style (user) goes into `~/.claude/output-styles/` and is turned on with `/output-style` or `"outputStyle": "concise-en-us"` in settings.
 
 ## How to compare pt-BR and en-US
 

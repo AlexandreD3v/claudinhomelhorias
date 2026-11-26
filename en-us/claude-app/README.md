@@ -2,7 +2,7 @@
 
 US English mirror of [`claude-app/`](../../claude-app/): material for the **Claude app** (chat and Claude Desktop, on Mac and Windows, and claude.ai in the browser) — usage guides, project instructions, styles, prompts and settings. Its pair is [`../claude/`](../claude/), the **Claude Code** package.
 
-From each site, what serves Claude Code goes to `claude/` and what serves the Claude app goes here. Only what serves neither is discarded (rule confirmed by Alexandre on November 26, 2026; details in pt-BR in [`CONTEXTO.md`](../../CONTEXTO.md)).
+From each site, what serves Claude Code goes to `claude/` and what serves the Claude app goes here. Only what serves neither is discarded (rule confirmed by Alexandre on November 26, 2026; details in [`CONTEXT.md`](../CONTEXT.md)).
 
 ## What goes here
 
@@ -28,7 +28,7 @@ Unlike `claude/`, there is **no install by copying files** here: Claude Code rea
 
 ## How to use
 
-1. Open [`../USAGE.md`](../USAGE.md) or the index [`fontes/INDICE.md`](../../fontes/INDICE.md) (pt-BR) and look for sources with theme `claude-app` or `ambos`.
+1. Open [`../USAGE.md`](../USAGE.md) or the index [`sources/INDEX.md`](../sources/INDEX.md) and look for sources with theme `claude-app` or `ambos`.
 2. Open the artifact and read the destination at the top.
 3. Follow the steps in the app, or paste the text where the destination says (project instructions, preferences, conversation).
 4. Check the version and plan the artifact requires. App features are in beta and change fast; each artifact's check date is in its header.

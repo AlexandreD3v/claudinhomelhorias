@@ -1,6 +1,6 @@
 # Instruções deste repositório
 
-Este repositório guarda o processo e os artefatos de customização do Claude Code (`claude/`) e do app Claude (`claude-app/`) do Alexandre. Idioma: **pt-BR**; os artefatos instaláveis têm também versão en-US em `en-us/`.
+Este repositório guarda o processo e os artefatos de customização do Claude Code (`claude/`) e do app Claude (`claude-app/`) do Alexandre. Idioma: **pt-BR** (canônico); artefatos, notas e arquivos de processo têm também versão en-US em `en-us/`.
 
 ## Antes de qualquer site novo
 
@@ -21,5 +21,6 @@ Este repositório guarda o processo e os artefatos de customização do Claude C
 - Notas em `fontes/NNN-slug.md` a partir de `templates/fonte.md`.
 - Artefatos instaláveis do Claude Code em `claude/`; do app Claude em `claude-app/` (guias, projetos, estilos, prompts, configurações). Citação da fonte em ambos.
 - Todo artefato instalável novo ou alterado sai nos dois idiomas: pt-BR em `claude/` ou `claude-app/` e en-US no espelho `en-us/claude/` ou `en-us/claude-app/`, com `name` em inglês diferente. Atualize `USO.md` e `en-us/USAGE.md` (o que faz, instalação, invocação, teste).
+- Notas, índice e arquivos de processo novos ou alterados também saem em en-US, no espelho de `en-us/` (tabela de caminhos em `en-us/README.md`).
 - Ponte para o Claude Code carregar skills/agentes desta pasta: `.claude/`.
 - Commits diretos em `main`, mensagem em pt-BR: um por fonte isolada, ou um só para o lote. `publicado` só depois do push no GitHub.
