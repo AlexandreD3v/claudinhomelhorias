@@ -18,3 +18,7 @@ Precedência, do que ganha: settings gerenciados e flag `--settings` > `settings
 **Instalação:** mescle as chaves de [`settings.exemplo.json`](settings.exemplo.json) no arquivo de destino. Não copie por cima de um `settings.json` já usado.
 
 Documentação: [Explore the .claude directory](https://code.claude.com/docs/en/claude-directory) e a [referência de settings](https://code.claude.com/docs/en/settings-reference). Servidores MCP de projeto ficam em `.mcp.json` na raiz (modelo em [`templates/mcp.json`](../../templates/mcp.json)), não neste arquivo.
+
+## Fragmento `opusplan.exemplo.json`
+
+**Destino de instalação:** `usuario` (mesclar a chave `model` em `~/.claude/settings.json`, não substituir o arquivo inteiro). É opcional: só use se quiser `opusplan` como padrão das sessões novas. Escolher `opusplan` só no `/model` não grava o padrão, segundo a documentação oficial de modelos. Detalhe e ressalvas: skill [`usar-opusplan`](../skills/usar-opusplan/SKILL.md) (fonte 001).

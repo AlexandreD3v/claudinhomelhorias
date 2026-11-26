@@ -8,6 +8,6 @@ Datas na coluna “Acesso” estão no fuso **America/Sao_Paulo**.
 
 | # | Acesso | URL | Título | Resumo | Artefatos | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| — | — | — | — | Nenhuma fonte processada ainda. A montagem inicial (processo, contexto e pacote `claude/`) não conta como fonte externa. | — | — |
+| 001 | 2026-11-25 22:03 | https://www.xda-developers.com/i-stopped-hitting-claudes-usage-limits-after-changing-one-habit-in-how-i-start-sessions/ | I stopped hitting Claude's usage limits after changing one habit in how I start sessions | Artigo da XDA sobre esticar o plano Pro com o alias `opusplan` (Opus no plano, Sonnet na execução). Título fala em hábito de início de sessão, mas o corpo não ensina `/clear`. | `claude/skills/usar-opusplan/SKILL.md` (usuario); `claude/settings/opusplan.exemplo.json` (usuario, opcional) | parcial |
 
-Próximo número livre: **001**.
+Próximo número livre: **002**.
