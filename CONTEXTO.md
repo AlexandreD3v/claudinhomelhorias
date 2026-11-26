@@ -2,7 +2,7 @@
 
 Este arquivo é o contexto persistente do repositório. Qualquer sessão futura deve lê-lo **antes** de processar um site novo, e atualizá-lo quando uma decisão ou convenção mudar.
 
-Última atualização: 26 de novembro de 2026, 08:35 (America/Sao_Paulo).
+Última atualização: 26 de novembro de 2026, 08:40 (America/Sao_Paulo).
 
 ## Objetivo
 
@@ -113,6 +113,12 @@ Premissas vigentes, confirmadas por Alexandre em **25 de novembro de 2026** (Ame
 - Índice com a coluna `Tema`. Preenchido: 001 `claude-code`, 002 `claude-code`, 003 `claude-app`.
 - Fonte 003 (9to5Mac, Install as app), antes `descartado`, foi reprocessada: virou guia em `claude-app/guias/` e passou a `parcial`, porque não foi testada no app Claude.
 - O guia de análise, o processo, os templates, a skill `processar-fonte` e o subagente `extrator-fonte` foram alinhados ao escopo novo.
+### 2026-11-26 — Lote 004 e 005
+
+- Duas fontes da XDA, ambas `claude-code`, processadas em um único commit: 004 (instruções fora da sessão principal) e 005 (pasta compartilhada entre agentes).
+- Lições da conferência oficial que valem como convenção: `@` import não reduz contexto (só skill, regra com `paths` e `CLAUDE.md` de subpasta carregam sob demanda); o Claude Code lê `AGENTS.md` sozinho desde a v2.1.277 quando não há `CLAUDE.md`; comentário de leitor em artigo não é fonte.
+- O starter `claude/CLAUDE.md` ganhou dois acréscimos (004). Novos: skill `enxugar-contexto` (usuario), skill `registrar-handoff` (projeto) e snippet `compartilhar-agents-md` (projeto). Todos `parcial`, sem teste no Claude Code.
+
 ## Como retomar uma sessão
 
 1. Ler este arquivo (incluindo a seção Premissas) e a última entrada do diário.
