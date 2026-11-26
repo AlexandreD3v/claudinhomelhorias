@@ -12,3 +12,4 @@ Skills neste pacote:
 
 - [`processar-fonte`](processar-fonte/SKILL.md) — pipeline deste repositório (destino: `usuario`).
 - [`usar-opusplan`](usar-opusplan/SKILL.md) — planejar com Opus e executar com Sonnet para esticar a cota (destino: `usuario`; fonte 001).
+- [`usar-code-mode`](usar-code-mode/SKILL.md) — ligar o Code Mode experimental e encadear tool calls em JavaScript (destino: `usuario`; fonte 002).

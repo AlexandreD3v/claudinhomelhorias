@@ -22,3 +22,7 @@ Documentação: [Explore the .claude directory](https://code.claude.com/docs/en/
 ## Fragmento `opusplan.exemplo.json`
 
 **Destino de instalação:** `usuario` (mesclar a chave `model` em `~/.claude/settings.json`, não substituir o arquivo inteiro). É opcional: só use se quiser `opusplan` como padrão das sessões novas. Escolher `opusplan` só no `/model` não grava o padrão, segundo a documentação oficial de modelos. Detalhe e ressalvas: skill [`usar-opusplan`](../skills/usar-opusplan/SKILL.md) (fonte 001).
+
+## Fragmento `code-mode.exemplo.json`
+
+**Destino de instalação:** `usuario` (mesclar o bloco `env` em `~/.claude/settings.json`, não substituir o arquivo e **não** gravar isso no settings de um projeto). A documentação oficial ignora `CLAUDE_CODE_EXPERIMENTAL_CODE_MODE` em settings de repositório. Opt-in permanente e experimental; detalhes e restrições na skill [`usar-code-mode`](../skills/usar-code-mode/SKILL.md) (fonte 002).
