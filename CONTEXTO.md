@@ -2,7 +2,7 @@
 
 Este arquivo é o contexto persistente do repositório. Qualquer sessão futura deve lê-lo **antes** de processar um site novo, e atualizá-lo quando uma decisão ou convenção mudar.
 
-Última atualização: 26 de novembro de 2026, 08:40 (America/Sao_Paulo).
+Última atualização: 26 de novembro de 2026, 09:10 (America/Sao_Paulo).
 
 ## Objetivo
 
@@ -41,7 +41,7 @@ Premissas vigentes, confirmadas por Alexandre em **25 de novembro de 2026** (Ame
 
 - **Objetivo.** Transformar sites indicados por Alexandre sobre Claude e Claude Code (Anthropic) em instruções úteis para aperfeiçoar o uso do Claude Code. O processo e todos os arquivos gerados vivem em [AlexandreD3v/claudinhomelhorias](https://github.com/AlexandreD3v/claudinhomelhorias).
 - **Público.** Alexandre Jackson Correa. Os artefatos servem ao uso dele no Claude Code. Cada um declara se a instalação é no projeto (`.claude/`) ou em `~/.claude`. O contexto profissional (NetSuite / SuiteScript, Qlik, SuiteScript Toolkit, transição para PJ) informa exemplos futuros; não se inventa artefato NetSuite sem fonte.
-- **Idioma.** Textos do repositório em pt-BR. Nomes de arquivos, skills, comandos e agentes em kebab-case ASCII.
+- **Idioma.** Textos do repositório em pt-BR; artefatos instaláveis também em en-US desde 26 de novembro de 2026 (veja abaixo). Nomes de arquivos, skills, comandos e agentes em kebab-case ASCII.
 - **Onde os artefatos vivem.** Pacote instalável do Claude Code canônico em `claude/`, no subdiretório do tipo. Pacote do app Claude em `claude-app/` (sem instalação por cópia: o app não lê o repositório). A pasta `.claude/` deste repo é só ponte para carregar skills/agentes/estilos daqui (e via `--add-dir`). A instalação em outro lugar segue o campo `destino` do artefato e o README de instalação.
 - **Tipos de artefato.** Claude Code: trecho de `CLAUDE.md`, regra (`paths`), skill (preferida para trabalho novo), comando legado, subagente, estilo de saída, hook e/ou `permissions.deny`/settings, MCP, plugin (só se houver pacote de verdade). App Claude: guia de uso, instrução de projeto, estilo ou preferência, prompt, configuração. Classificação e destinos: tabelas em [`GUIA-ANALISE-SITE.md`](GUIA-ANALISE-SITE.md).
 - **Oficial prevalece no formato.** Caminhos, frontmatter e comportamento do produto seguem a documentação oficial vigente (`code.claude.com` para o Claude Code; `claude.com/resources`, `support.claude.com` e `anthropic.com/news` para o app Claude; atalhos em `referencias/praticas-oficiais.md`). Dica de blog que contradisser o oficial não dita o artefato; a divergência vai para a nota. Fluxo extraoficial acionável que não contradiz o oficial pode ser gravado, com atribuição, sem ser apresentado como doc da Anthropic.
@@ -68,6 +68,8 @@ Premissas vigentes, confirmadas por Alexandre em **25 de novembro de 2026** (Ame
 - **Regra de extração.** De cada site, extrair o que se aplica ao Claude Code (vai para `claude/`) ou ao app Claude (vai para `claude-app/`). Descartar só o que não serve a nenhum dos dois. Isso ampliou a premissa dos links vizinhos de 25 de novembro, que falava só do Claude Code.
 - **Artefatos do app.** Guias de uso, instruções de projeto ou estilo, prompts e configurações do app. Cada um indica o destino: `app-claude` (app Claude Mac/Windows), `projeto-claudeai` (Projeto do claude.ai) ou `configuracoes` (Configurações). O README de [`claude-app/`](claude-app/) explica o que entra e como usar.
 - **Tema no índice.** A tabela de [`fontes/INDICE.md`](fontes/INDICE.md) ganha a coluna `Tema` (`claude-code`, `claude-app` ou `ambos`).
+- **Dois idiomas.** Pedido de Alexandre em 26 de novembro de 2026: tudo o que é instalável sai em pt-BR (em `claude/` e `claude-app/`) e em en-US (espelho em `en-us/claude/` e `en-us/claude-app/`), para comparar o uso das duas versões e compartilhar. Skills, agentes e estilos en-US têm `name` em inglês diferente, para coexistirem em `~/.claude/`. Notas de `fontes/`, guia, `PROCESSO.md`, `CONTEXTO.md` e templates ficam só em pt-BR; [`README.en-US.md`](README.en-US.md) apresenta o repositório em inglês.
+- **Como usar.** Cada fonte com artefato instalável tem uma seção em [`USO.md`](USO.md) e [`en-us/USAGE.md`](en-us/USAGE.md): o que faz, comando de cópia, invocação e teste.
 - **Demais premissas.** Valem também para o app: destino declarado, conferência na doc oficial, dois lados em conflitos, `publicado` só após push, não testado deixa a fonte `parcial`, um commit por lote.
 
 ## Estado do repositório na montagem
@@ -118,6 +120,14 @@ Premissas vigentes, confirmadas por Alexandre em **25 de novembro de 2026** (Ame
 - Duas fontes da XDA, ambas `claude-code`, processadas em um único commit: 004 (instruções fora da sessão principal) e 005 (pasta compartilhada entre agentes).
 - Lições da conferência oficial que valem como convenção: `@` import não reduz contexto (só skill, regra com `paths` e `CLAUDE.md` de subpasta carregam sob demanda); o Claude Code lê `AGENTS.md` sozinho desde a v2.1.277 quando não há `CLAUDE.md`; comentário de leitor em artigo não é fonte.
 - O starter `claude/CLAUDE.md` ganhou dois acréscimos (004). Novos: skill `enxugar-contexto` (usuario), skill `registrar-handoff` (projeto) e snippet `compartilhar-agents-md` (projeto). Todos `parcial`, sem teste no Claude Code.
+
+### 2026-11-26 — Versão en-US e “como usar”
+
+- Alexandre pediu uma versão pt-BR e outra en-US de tudo o que foi produzido (fontes 001 a 005), para testar a diferença de uso e compartilhar. Perguntou também se cada fonte tinha um artefato explicando o que faz e como usar: só a 003 tinha (o guia do app já traz requisitos, passo a passo e teste); nas outras, o como instalar e testar estava espalhado entre a nota, os READMEs e o corpo da skill.
+- Estrutura escolhida: espelho `en-us/claude/` e `en-us/claude-app/`, mantendo os caminhos pt-BR intactos (notas, índice e patches anteriores continuam válidos) e deixando a versão en-US numa pasta só, fácil de compartilhar. Sufixo no nome do arquivo (`SKILL.en.md`) não serve: o Claude Code só lê `SKILL.md`.
+- Nomes en-US: `use-opusplan`, `use-code-mode`, `trim-context`, `write-handoff`, `process-source`, `source-extractor`, `concise-en-us`, `share-agents-md` (tabela completa em `USO.md`).
+- “Como usar” num arquivo por idioma (`USO.md` na raiz e `en-us/USAGE.md`), com uma seção por fonte e a seção “Como comparar pt-BR e en-US” (tokens no `/context`, aderência e qualidade, com as versões isoladas por `CLAUDE_CONFIG_DIR`).
+- O guia (passos 8 a 10, validação, relatório e checklist), `PROCESSO.md`, os templates e a skill `processar-fonte` ganharam a regra dos dois idiomas. Nenhum artefato foi testado; as fontes seguem `parcial`.
 
 ## Como retomar uma sessão
 

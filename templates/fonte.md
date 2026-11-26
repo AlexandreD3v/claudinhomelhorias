@@ -23,8 +23,11 @@ Um parágrafo com o que o texto realmente ensina de útil para o Claude Code ou 
 
 ## Artefatos gerados
 
+Cada artefato instalável tem espelho en-US em `en-us/` (nome em inglês); liste os dois. O “como usar” fica em `USO.md` e `en-us/USAGE.md`.
+
 - `claude/...` — destino: `projeto` ou `usuario` — uma linha do que faz
 - `claude-app/...` — destino: `app-claude`, `projeto-claudeai` ou `configuracoes` — uma linha do que faz
+- `en-us/claude/...` / `en-us/claude-app/...` — espelho en-US de cada item acima (nome: `...`)
 
 ## Duplicatas e reuso
 

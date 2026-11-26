@@ -8,7 +8,7 @@ Cada skill é uma pasta `nome-da-skill/SKILL.md`, mais arquivos de apoio se prec
 
 **Sobre comandos:** arquivos em `.claude/commands/` ainda funcionam, mas a documentação oficial recomenda skills para trabalho novo. Se uma skill e um comando tiverem o mesmo nome, a skill vence.
 
-Skills neste pacote:
+Skills neste pacote (o espelho en-US, com nomes em inglês, está em [`en-us/claude/skills/`](../../en-us/claude/skills/); tabela de nomes em [`USO.md`](../../USO.md)):
 
 - [`processar-fonte`](processar-fonte/SKILL.md) — pipeline deste repositório (destino: `usuario`).
 - [`usar-opusplan`](usar-opusplan/SKILL.md) — planejar com Opus e executar com Sonnet para esticar a cota (destino: `usuario`; fonte 001).

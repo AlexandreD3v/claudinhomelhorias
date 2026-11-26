@@ -28,7 +28,7 @@ Diferente de `claude/`, aqui **não há instalação por cópia de arquivo**: o 
 
 ## Como usar
 
-1. Abra o [`fontes/INDICE.md`](../fontes/INDICE.md) e procure as fontes com tema `claude-app` ou `ambos`.
+1. Abra o [`USO.md`](../USO.md) ou o [`fontes/INDICE.md`](../fontes/INDICE.md) e procure as fontes com tema `claude-app` ou `ambos`. A versão en-US desta pasta está em [`en-us/claude-app/`](../en-us/claude-app/).
 2. Abra o artefato e leia o destino logo no começo.
 3. Siga o passo a passo no app, ou cole o texto onde o destino manda (instruções do projeto, preferências, conversa).
 4. Confira a versão e o plano que o artefato exige. Recursos do app estão em beta e mudam rápido; a data de conferência de cada artefato está no cabeçalho.

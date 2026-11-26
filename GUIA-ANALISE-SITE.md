@@ -6,7 +6,7 @@ Passo a passo operacional para cada link enviado por Alexandre. Siga os passos n
 
 Este guia é a referência de execução. O contrato curto (qualidade, estados do índice, o que não fazer) permanece em [`PROCESSO.md`](PROCESSO.md). As premissas vigentes, confirmadas em 25 de novembro de 2026, estão em [`CONTEXTO.md`](CONTEXTO.md). A skill [`/processar-fonte`](claude/skills/processar-fonte/SKILL.md) e o subagente [`extrator-fonte`](claude/agents/extrator-fonte.md) seguem este mesmo fluxo.
 
-Idioma dos arquivos gerados: **pt-BR**. Datas de acesso e do relatório: fuso **America/Sao_Paulo**, com o fuso explícito.
+Idioma dos arquivos gerados: **pt-BR**, e todo artefato instalável ganha também a versão **en-US** no espelho `en-us/` (passos 8 a 10). Datas de acesso e do relatório: fuso **America/Sao_Paulo**, com o fuso explícito.
 
 ## 1. Intake — capturar o pedido
 
@@ -124,6 +124,11 @@ Desempates:
 7. Artefatos de `claude-app/` não têm cópia em `.claude/`: o app Claude não lê este repositório. Se o artefato do Claude Code também deve carregar neste repositório (skill, agente, estilo usados no próprio pipeline), atualize a cópia correspondente em `.claude/` e mantenha as duas iguais. O pacote instalável canônico é sempre `claude/`. Isso **não** substitui o campo `destino`: a ponte `.claude/` daqui não é a instalação no projeto do Alexandre.
 8. Não substitua, no projeto de destino, um `CLAUDE.md` ou `settings.json` já afiado: aqui só preparamos o pacote para cópia ou mescla seletiva. O README de cada tipo em `claude/` deve continuar explicando para onde copiar.
 9. Não cole texto substancial de artigo com direitos autorais.
+10. **Dois idiomas.** Todo artefato instalável novo ou alterado sai em pt-BR (em `claude/` ou `claude-app/`) e em en-US, no mesmo caminho relativo sob `en-us/claude/` ou `en-us/claude-app/`. Na versão en-US:
+    - o `name` de skill, agente e estilo é um kebab-case ASCII em inglês, **diferente** do pt-BR (`usar-opusplan` → `use-opusplan`), para as duas versões coexistirem em `~/.claude/`; arquivos de apoio e exemplos também ganham nome em inglês (`modelos.md` → `templates.md`, `*.exemplo.json` → `*.example.json`);
+    - o conteúdo é o mesmo (mesmos passos, ressalvas, citação e conferência oficial), sem acrescentar nem cortar; em skills, `metadata.mirror-of` aponta o nome pt-BR e o destino vai em `metadata.destination` (`project` ou `user`); no app, os valores de destino continuam `app-claude`, `projeto-claudeai` e `configuracoes`;
+    - links para notas e arquivos de processo apontam para os originais em pt-BR (não há tradução deles).
+11. **Como usar.** Atualize [`USO.md`](USO.md) e [`en-us/USAGE.md`](en-us/USAGE.md): a seção da fonte (o que faz, onde instalar com o comando de cópia, como invocar, como testar) e a tabela de nomes pt-BR ↔ en-US.
 
 ## 9. Validar
 
@@ -134,19 +139,21 @@ Validação mecânica (obrigatória antes de fechar a fonte):
 - Em `claude-app/`, os links relativos e as URLs oficiais citadas abrem (confira um por um) e o cabeçalho traz a data da conferência oficial e se foi testado.
 - JSON (`settings`, blocos de hook, MCP): `python3 -m json.tool caminho/arquivo.json` deve sair sem erro.
 - Script de hook: `bash -n caminho/script.sh` (ou equivalente) e bit de execução (`chmod +x`) no macOS/Linux.
-- Nomes de pasta/arquivo em kebab-case ASCII, sem colidir com skill ou agente já existente.
+- Nomes de pasta/arquivo em kebab-case ASCII, sem colidir com skill ou agente já existente, **em nenhum dos dois idiomas** (o `name` en-US não pode repetir um pt-BR nem outro en-US).
+- Os dois idiomas estão presentes e equivalentes: mesmo caminho relativo sob `en-us/`, mesmos campos de frontmatter, JSON válido nos dois, links relativos funcionando nos dois.
 - Trechos de `CLAUDE.md`: continue cabendo no espírito do alvo oficial (arquivo final curto, de preferência abaixo de 200 linhas).
 
-Validação no Claude Code: copie ou use `--add-dir` / `/add-dir` neste repositório, confira com `/context`, `/doctor`, `/hooks` ou `/mcp` conforme o tipo, e tente invocar a skill ou o agente. **Se o artefato ainda não foi testado numa sessão do Claude Code, a fonte permanece `parcial` até o teste.** A checagem mecânica sozinha não autoriza `publicado`.
+Validação no Claude Code: valide as duas versões (cada uma pode ser testada sozinha; para comparar, siga “Como comparar pt-BR e en-US” do `USO.md`). Copie ou use `--add-dir` / `/add-dir` neste repositório, confira com `/context`, `/doctor`, `/hooks` ou `/mcp` conforme o tipo, e tente invocar a skill ou o agente. **Se o artefato ainda não foi testado numa sessão do Claude Code, a fonte permanece `parcial` até o teste.** A checagem mecânica sozinha não autoriza `publicado`.
 
 Validação no app Claude (artefatos de `claude-app/`): siga o passo a passo do próprio artefato no app, na versão e no plano que ele exige, e registre como e em que versão foi testado. **Sem esse teste, a fonte permanece `parcial`.** Fonte de tema `ambos` só chega a `publicado` com os dois testes.
 
 ## 10. Registrar e fechar a fonte
 
 1. Complete `fontes/NNN-slug.md`: insights, artefatos (com destino), duplicatas, divergências, conflitos com os dois lados visíveis, pendências e status.
-2. Atualize a linha em `fontes/INDICE.md` (tema, resumo, artefatos gerados, status).
-3. Se nasceu uma convenção ou premissa nova, atualize o diário — e, se for o caso, a seção Premissas — em `CONTEXTO.md`.
-4. Escolha o status:
+2. Atualize a linha em `fontes/INDICE.md` (tema, resumo, artefatos gerados, status). Na coluna de artefatos, liste o caminho pt-BR; o espelho en-US fica implícito e aparece na tabela de nomes do `USO.md`.
+3. Confira que `USO.md` e `en-us/USAGE.md` têm a seção da fonte. Uma fonte com artefato instalável não fecha sem o “como usar” nos dois idiomas.
+4. Se nasceu uma convenção ou premissa nova, atualize o diário — e, se for o caso, a seção Premissas — em `CONTEXTO.md`.
+5. Escolha o status:
    - `publicado` — nota e artefatos (se houver) gravados, testados no Claude Code ou no app Claude (conforme o tema), commitados em `main` e **já enviados (push) ao GitHub**;
    - `parcial` — algo útil foi gravado, mas ficou pendência (página incompleta, teste no Claude Code ou no app Claude ainda não feito, push pendente, dúvida de classificação);
    - `descartado` — o site não rendeu artefato nem para o Claude Code nem para o app Claude; a nota explica o porquê. Reserve o número e **commit a nota e o índice** mesmo assim.
@@ -193,7 +200,7 @@ Acesso: AAAA-MM-DD HH:MM (America/Sao_Paulo)
 Credibilidade: <oficial | comunidade | marketing>, publicado/atualizado em <data ou “sem data”>, versão citada <se houver>
 
 O que rendeu:
-- <caminho do artefato> — destino: projeto | usuario | app-claude | projeto-claudeai | configuracoes — <uma linha do que faz e como instalar ou usar>
+- <caminho do artefato> (en-US: <caminho do espelho>) — destino: projeto | usuario | app-claude | projeto-claudeai | configuracoes — <uma linha do que faz e como instalar ou usar>
 
 O que não rendeu (e por quê):
 - <insight descartado, trecho de Cursor/outro agente ignorado que não serve nem ao Claude Code nem ao app Claude, ou página não lida>
@@ -225,6 +232,8 @@ Não antecipe o próximo pedido. Se o lote ainda tiver fonte em `parcial`, diga 
 - [ ] Tipo escolhido pela tabela de classificação; template usado
 - [ ] Destino de instalação declarado no artefato (`projeto` ou `usuario` em `claude/`; `app-claude`, `projeto-claudeai` ou `configuracoes` em `claude-app/`)
 - [ ] Citação da fonte no artefato; cópia em `.claude/` atualizada se o pipeline daqui depender dela
+- [ ] Versão en-US gravada em `en-us/` com `name` em inglês sem colisão e conteúdo equivalente ao pt-BR
+- [ ] Seção da fonte e tabela de nomes atualizadas em `USO.md` e `en-us/USAGE.md` (o que faz, instalação, invocação, teste)
 - [ ] JSON / frontmatter / hook validados mecanicamente
 - [ ] Teste feito no Claude Code (`claude/`) ou no app Claude (`claude-app/`); se não, status `parcial`
 - [ ] Índice (com a coluna `Tema`) e nota fechados com o status correto; diário de `CONTEXTO.md` atualizado se couber

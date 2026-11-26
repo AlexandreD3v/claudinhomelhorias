@@ -4,7 +4,9 @@ Repositório pessoal de **Alexandre Jackson Correa** para transformar artigos e 
 
 O fluxo é simples: chega um link, o conteúdo é lido, os insights acionáveis são classificados no tipo certo de artefato (trecho de `CLAUDE.md`, skill, comando, subagente, hook, setting, regra, estilo de saída ou MCP) e o resultado fica versionado aqui. Cada artefato declara o destino: no Claude Code, `projeto` (`.claude/` do projeto) ou `usuario` (`~/.claude`); no app Claude, `app-claude`, `projeto-claudeai` ou `configuracoes`. Cada fonte tem um tema (`claude-code`, `claude-app` ou `ambos`) no índice.
 
-Todo o material deste repositório é escrito em **pt-BR**. Nomes de skills, comandos e agentes usam kebab-case ASCII, porque o Claude Code pode recusar caracteres especiais no nome.
+Os artefatos instaláveis existem em **dois idiomas**: pt-BR em `claude/` e `claude-app/`, e en-US em [`en-us/claude/`](en-us/claude/) e [`en-us/claude-app/`](en-us/claude-app/), com nomes em inglês diferentes (por exemplo `usar-opusplan` → `use-opusplan`) para as duas versões coexistirem instaladas. As notas, o guia e os demais arquivos de processo ficam só em pt-BR. Visão geral em inglês: [`README.en-US.md`](README.en-US.md). Nomes de skills, comandos e agentes usam kebab-case ASCII, porque o Claude Code pode recusar caracteres especiais no nome.
+
+**Só quer instalar e usar?** Veja [`USO.md`](USO.md) (pt-BR) ou [`en-us/USAGE.md`](en-us/USAGE.md) (en-US): o que cada artefato faz, comando de cópia, como invocar, como testar e como comparar as duas versões.
 
 ## Como usar
 
@@ -71,6 +73,9 @@ Ou, já dentro do Claude Code: `/add-dir /caminho/para/claudinhomelhorias`.
 | [`fontes/`](fontes/) | Notas por site (`NNN-slug.md`) |
 | [`claude/`](claude/) | Pacote instalável do Claude Code (espelho de `.claude/`) |
 | [`claude-app/`](claude-app/) | Pacote do app Claude: guias, instruções de projeto, estilos, prompts e configurações (sem instalação por cópia) |
+| [`USO.md`](USO.md) | Como usar cada artefato, por fonte, e como comparar pt-BR com en-US |
+| [`en-us/`](en-us/) | Versão en-US dos pacotes (`en-us/claude/`, `en-us/claude-app/`) e o [`USAGE.md`](en-us/USAGE.md) |
+| [`README.en-US.md`](README.en-US.md) | Visão geral do repositório em inglês |
 | [`templates/`](templates/) | Modelos de nota e de cada tipo de artefato |
 | [`referencias/praticas-oficiais.md`](referencias/praticas-oficiais.md) | Síntese das práticas oficiais consultadas na montagem inicial |
 | [`CLAUDE.md`](CLAUDE.md) | Instruções deste repositório para o Claude Code |
@@ -79,6 +84,7 @@ Ou, já dentro do Claude Code: `/add-dir /caminho/para/claudinhomelhorias`.
 ## Convenções rápidas
 
 - Escopo: Claude Code (`claude/`) e app Claude (`claude-app/`). Descarta-se só o que não serve a nenhum dos dois.
+- Idiomas: todo artefato instalável sai em pt-BR e em en-US (espelho em `en-us/`), e o `USO.md` / `en-us/USAGE.md` é atualizado junto.
 
 - Qualidade: curto, acionável, conferido na documentação oficial, sem duplicar o que já existe, com a fonte citada.
 - Não cole trechos longos de artigos com direitos autorais; extraia o que dá para aplicar e cite a URL.

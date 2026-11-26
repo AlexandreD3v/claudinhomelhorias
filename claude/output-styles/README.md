@@ -8,4 +8,4 @@ Um estilo é um Markdown em `.claude/output-styles/` (projeto) ou `~/.claude/out
 
 Documentação: [Output styles](https://code.claude.com/docs/en/output-styles). Template: [`templates/output-style.md`](../../templates/output-style.md).
 
-Estilo incluído neste pacote: [`conciso-ptbr.md`](conciso-ptbr.md). Para usá-lo como padrão do projeto, mescle `"outputStyle": "conciso-ptbr"` no settings (já sugerido em `claude/settings/settings.exemplo.json`).
+Estilo incluído neste pacote: [`conciso-ptbr.md`](conciso-ptbr.md). O equivalente em inglês é [`concise-en-us`](../../en-us/claude/output-styles/concise-en-us.md). Para usá-lo como padrão do projeto, mescle `"outputStyle": "conciso-ptbr"` no settings (já sugerido em `claude/settings/settings.exemplo.json`).

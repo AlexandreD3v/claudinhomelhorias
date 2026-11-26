@@ -21,6 +21,10 @@ Onde o campo aparece (sem inventar chave de frontmatter que o Claude Code não r
 
 Para o app Claude (`claude-app/`) os valores são `app-claude`, `projeto-claudeai` e `configuracoes`, sempre numa linha `**Destino de instalação:** …` logo abaixo do título (significado em [`claude-app/README.md`](../claude-app/README.md)). Não há instalação por cópia de arquivo: o app não lê o repositório.
 
+## Versão en-US
+
+Os modelos ficam em pt-BR. Ao gravar um artefato, grave também o espelho en-US em `en-us/` (mesmo caminho relativo, `name` em inglês diferente, destino em `metadata.destination` com `project` ou `user` nas skills e comandos, ou na linha `**Install destination:**` nos demais tipos). Regra completa no passo 8 do [guia](../GUIA-ANALISE-SITE.md).
+
 ## Modelos
 
 | Modelo | Uso |
