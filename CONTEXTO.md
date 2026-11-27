@@ -2,7 +2,7 @@
 
 Este arquivo é o contexto persistente do repositório. Qualquer sessão futura deve lê-lo **antes** de processar um site novo, e atualizá-lo quando uma decisão ou convenção mudar.
 
-Última atualização: 26 de novembro de 2026, 17:55 (America/Sao_Paulo).
+Última atualização: 27 de novembro de 2026, 10:33 (America/Sao_Paulo).
 
 ## Objetivo
 
@@ -143,6 +143,12 @@ Premissas vigentes, confirmadas por Alexandre em **25 de novembro de 2026** (Ame
 - Alexandre aprovou processar agora o artigo oficial da Anthropic (24/11) sobre Skills over MCP, Tasks, Elicitation e File Uploads, apesar da cota semanal alta.
 - Tema `ambos`: skill `usar-skills-pelo-mcp` (usuario) e guia `claude-app/guias/skills-pelo-mcp.md` (app-claude), com espelho en-US (`use-mcp-skills`, `guides/skills-over-mcp.md`). Status `parcial`.
 - Divergências registradas na nota: o artigo ainda diz “em breve no Enterprise”, a tabela oficial já lista Team e Enterprise como Admin-enabled; a doc cita v2.1.331+, o changelog anuncia o recurso na 2.1.332; File Uploads “em rollout” no artigo e já documentado em beta com restrições.
+
+### 2026-11-27 — Dez dicas, uma fonte por vez; fonte 007 (cache da sessão)
+
+- Alexandre aprovou adicionar as 10 dicas da pesquisa (`/workspace/claudinho-dicas-10.md`), **uma de cada vez**, na ordem da lista, para observar a utilização de cada uma antes da seguinte.
+- Primeira: fonte 007, artigo oficial “Maximizing the value of your Claude Code sessions”. Tema `claude-code`, status `parcial`. Skill `cuidar-cache-da-sessao` (usuario) e snippet opcional `instrucoes-de-compact.md`. Espelho en-US: `protect-session-cache`, `compact-instructions.md`.
+- Conflito com a 001 registrado nos dois lados: `opusplan` troca de modelo ao entrar/sair do plan mode e quebra o cache; ligar no início da sessão (ou após `/clear`), não no meio.
 ## Como retomar uma sessão
 
 1. Ler este arquivo (incluindo a seção Premissas) e a última entrada do diário.

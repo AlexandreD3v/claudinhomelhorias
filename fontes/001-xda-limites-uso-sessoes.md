@@ -74,6 +74,7 @@ Não havia skill, snippet ou setting sobre `opusplan`, `/usage` ou limites compa
 
 - **Artigo XDA:** o caminho prático é `opusplan`; o título sugere hábito de início de sessão, mas o corpo não desenvolve `/clear` / `/compact`.
 - **Doc oficial da Anthropic:** confirma o `opusplan` (`/model opusplan`) e, **além disso**, trata `/clear` entre tarefas não relacionadas e `/compact` no meio de uma tarefa longa como hábitos centrais de uso. Também confirma o cache miss em toda troca de modelo, inclusive a cada ida/volta do plan mode com `opusplan`.
+- **Fonte 007** ([Maximizing the value of your Claude Code sessions](https://claude.com/resources/articles/maximizing-the-value-of-your-claude-code-sessions), skill `cuidar-cache-da-sessao`): aprofunda o mesmo cache miss — reler o histórico no meio de uma conversa longa sai caro; o momento barato de ligar `opusplan` (ou qualquer `/model`) é o início da sessão ou logo após um `/clear`. Os dois lados ficam: a 001 ensina o alias; a 007 ensina quando ligá-lo para não quebrar o cache no pior momento.
 - Os dois lados ficam visíveis acima. Recomendação (alinhada ao oficial, sem esconder o artigo): use `opusplan` quando houver fase de plano + execução; use também `/clear` ao mudar de tarefa, como a doc oficial pede — isso não veio do corpo do artigo.
 
 ## Pendências

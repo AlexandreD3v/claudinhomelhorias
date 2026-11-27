@@ -29,6 +29,8 @@ Os nomes em inglês são diferentes de propósito: as duas versões podem ficar 
 | 005 | skill | `registrar-handoff` (+ `modelos.md`) | `write-handoff` (+ `templates.md`) |
 | 006 | skill | `usar-skills-pelo-mcp` | `use-mcp-skills` |
 | 006 | guia do app | `guias/skills-pelo-mcp.md` | `guides/skills-over-mcp.md` |
+| 007 | skill | `cuidar-cache-da-sessao` | `protect-session-cache` |
+| 007 | snippet | `snippets/instrucoes-de-compact.md` | `snippets/compact-instructions.md` |
 | repo | skill | `processar-fonte` | `process-source` |
 | repo | subagente | `extrator-fonte` | `source-extractor` |
 | repo | estilo de saída | `conciso-ptbr` | `concise-en-us` |
@@ -38,6 +40,7 @@ Os nomes em inglês são diferentes de propósito: as duas versões podem ficar 
 ## Fonte 001 — opusplan para esticar a cota
 
 - **O que faz:** a skill `usar-opusplan` ensina a usar o alias `opusplan`: o Opus planeja no plan mode e o Sonnet executa depois da aprovação, com as ressalvas oficiais (cache, limites compartilhados).
+- **Cruzamento com a fonte 007:** cada ida ou volta do plan mode com `opusplan` troca de modelo e quebra o prompt cache. Ligue `/model opusplan` no início da sessão (ou logo após `/clear`), não no meio de uma conversa já longa; detalhes na skill `cuidar-cache-da-sessao`.
 - **Instalar (usuario):**
   ```bash
   mkdir -p ~/.claude/skills && cp -R "$REPO/claude/skills/usar-opusplan" ~/.claude/skills/
@@ -98,6 +101,18 @@ Os nomes em inglês são diferentes de propósito: as duas versões podem ficar 
 - **Invocar:** `/usar-skills-pelo-mcp` quando for ligar um servidor que publica skills, ou deixe o Claude carregar a skill se a descrição combinar. A skill *do servidor* se invoca com `/servidor:skill`, não com este nome.
 - **Testar:** no Claude Code v2.1.332+ (Pro/Max/Ultra, `/login`), conecte um servidor ou conector que publique skills; `/skills` deve listar `servidor:skill`; invoque uma skill inofensiva. Se houver Tasks ou Elicitation, acompanhe em `/tasks` (feche `/tasks` para ver o diálogo). No app, o fluxo é pelo conector. Ainda não testado; a fonte está `parcial`.
 
+
+## Fonte 007 — proteger o prompt cache da sessão
+
+- **O que faz:** a skill `cuidar-cache-da-sessao` ensina a fixar modelo, esforço e Fast mode no início, a usar `/rewind` (não `/compact`) para desfazer as últimas rodadas, e a compactar antes de uma pausa, enquanto o cache ainda vale (1 hora no plano). Registra o conflito com a fonte 001: `opusplan` quebra o cache a cada ida/volta do plan mode. O snippet `instrucoes-de-compact.md` é opcional, para colar no `CLAUDE.md`.
+- **Instalar a skill (usuario):**
+  ```bash
+  mkdir -p ~/.claude/skills && cp -R "$REPO/claude/skills/cuidar-cache-da-sessao" ~/.claude/skills/
+  ```
+  Opcional: cole o corpo de `claude/snippets/instrucoes-de-compact.md` no `~/.claude/CLAUDE.md` ou no `CLAUDE.md` do projeto.
+- **Invocar:** `/cuidar-cache-da-sessao`, ou o Claude carrega sozinho quando você fala de cache, `/rewind`, `/compact` ou de trocar de modelo no meio da sessão.
+- **Testar:** numa sessão nova, fixe o modelo no início, faça duas ou três rodadas, rode `/rewind` e confira que a conversa recuou. Noutra sessão, compare (em `/usage` ou no sinal de cache da sua versão) um `/model` no meio versus no início. Ainda não testado; a fonte está `parcial`.
+
 ## Ferramentas do próprio repositório
 
 Não vêm de fonte externa; servem ao pipeline. `processar-fonte` (skill, usuario) e `extrator-fonte` (subagente, usuario) processam um link novo seguindo o [guia](GUIA-ANALISE-SITE.md): instale com `cp -R "$REPO/claude/skills/processar-fonte" ~/.claude/skills/` e `cp "$REPO/claude/agents/extrator-fonte.md" ~/.claude/agents/`, e invoque com `/processar-fonte <url>` no checkout deste repositório. O estilo `conciso-ptbr` (usuario) vai para `~/.claude/output-styles/` e se liga com `/output-style` ou `"outputStyle": "conciso-ptbr"` no settings.
@@ -106,7 +121,7 @@ Não vêm de fonte externa; servem ao pipeline. `processar-fonte` (skill, usuari
 
 Objetivo: ver, no seu uso, se a versão em inglês gasta menos contexto ou é seguida melhor que a em português. Não há número oficial sobre isso; é preciso medir.
 
-**Isole as duas versões.** Com as duas instaladas juntas, as descrições das skills automáticas (`usar-opusplan`/`use-opusplan`, `usar-code-mode`/`use-code-mode`, `usar-skills-pelo-mcp`/`use-mcp-skills`, `processar-fonte`/`process-source`) entram duas vezes na lista de skills, e o Claude pode escolher qualquer uma. Para comparar, instale um idioma por vez, ou use um diretório de configuração para cada um (pode pedir login de novo):
+**Isole as duas versões.** Com as duas instaladas juntas, as descrições das skills automáticas (`usar-opusplan`/`use-opusplan`, `usar-code-mode`/`use-code-mode`, `usar-skills-pelo-mcp`/`use-mcp-skills`, `cuidar-cache-da-sessao`/`protect-session-cache`, `processar-fonte`/`process-source`) entram duas vezes na lista de skills, e o Claude pode escolher qualquer uma. Para comparar, instale um idioma por vez, ou use um diretório de configuração para cada um (pode pedir login de novo):
 
 ```bash
 CLAUDE_CONFIG_DIR=~/.claude-ptbr claude   # só os artefatos pt-BR instalados aqui

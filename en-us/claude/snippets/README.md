@@ -5,3 +5,4 @@ Pieces from external sources, to merge selectively into an existing `CLAUDE.md`.
 Snippets in this package:
 
 - [`share-agents-md.md`](share-agents-md.md) — `@AGENTS.md` in `CLAUDE.md` for projects that other agents also read (destination: `project`; source 005).
+- [`compact-instructions.md`](compact-instructions.md) (`instrucoes-de-compact.md`) — “Compact instructions” section for `/compact` (destination: `user` or `project`; source 007, optional).

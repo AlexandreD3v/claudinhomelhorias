@@ -75,6 +75,7 @@ There was no skill, snippet or setting about `opusplan`, `/usage` or shared limi
 
 - **XDA article:** the practical path is `opusplan`; the title suggests a session-start habit, but the body does not develop `/clear` / `/compact`.
 - **Anthropic official docs:** confirm `opusplan` (`/model opusplan`) and, **in addition**, treat `/clear` between unrelated tasks and `/compact` in the middle of a long task as core usage habits. They also confirm the cache miss on every model switch, including each move in/out of plan mode with `opusplan`.
+- **Source 007** ([Maximizing the value of your Claude Code sessions](https://claude.com/resources/articles/maximizing-the-value-of-your-claude-code-sessions), skill `protect-session-cache`): goes deeper on the same cache miss — rereading the history in the middle of a long conversation is expensive; the cheap moment to turn on `opusplan` (or any `/model`) is the start of the session or right after a `/clear`. Both sides stay: 001 teaches the alias; 007 teaches when to turn it on so you don't break the cache at the worst time.
 - Both sides stay visible above. Recommendation (aligned with the official docs, without hiding the article): use `opusplan` when there is a plan + execution phase; also use `/clear` when changing tasks, as the official docs ask — that did not come from the article's body.
 
 ## Open items

@@ -18,6 +18,8 @@ Coluna `Tema`: `claude-code` (artefatos em [`claude/`](../claude/)), `claude-app
 
 | 006 | 2026-11-26 17:55 | https://claude.com/resources/articles/skills-over-mcp-tasks-and-more | MCP servers can now ship skills, run tasks, and more with Claude | ambos | Artigo oficial: servidores MCP publicam skills (beta), rodam Tasks e pedem input com Elicitation; File Uploads em rollout. O oficial confirma o núcleo e já lista Enterprise como Admin-enabled (o artigo ainda diz “em breve”). | `claude/skills/usar-skills-pelo-mcp/SKILL.md` (usuario); `claude-app/guias/skills-pelo-mcp.md` (app-claude) | parcial |
 
+| 007 | 2026-11-27 10:33 | https://claude.com/resources/articles/maximizing-the-value-of-your-claude-code-sessions | Maximizing the value of your Claude Code sessions | claude-code | Artigo oficial: proteger o prompt cache (modelo/esforço no início, `/rewind` em vez de `/compact` no meio, compactar antes da pausa). Conflito prático com a 001: `opusplan` troca de modelo ao entrar/sair do plan mode e quebra o cache. | `claude/skills/cuidar-cache-da-sessao/SKILL.md` (usuario); `claude/snippets/instrucoes-de-compact.md` (usuario ou projeto, opcional) | parcial |
+
 Os caminhos da coluna Artefatos são os pt-BR. Cada artefato instalável tem espelho en-US em `en-us/` (nome em inglês); a tabela de nomes e o “como usar” por fonte estão em [`USO.md`](../USO.md) e [`en-us/USAGE.md`](../en-us/USAGE.md).
 
-Próximo número livre: **007**.
+Próximo número livre: **008**.

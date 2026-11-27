@@ -18,6 +18,8 @@ Dates in the "Accessed" column are in the **America/Sao_Paulo** time zone.
 
 | [006](006-anthropic-skills-over-mcp.md) | 2026-11-26 17:55 | https://claude.com/resources/articles/skills-over-mcp-tasks-and-more | MCP servers can now ship skills, run tasks, and more with Claude | ambos | Official article: MCP servers ship skills (beta), run Tasks and ask for input with Elicitation; File Uploads is rolling out. The official docs confirm the core and already list Enterprise as Admin-enabled (the article still says “coming soon”). | `en-us/claude/skills/use-mcp-skills/SKILL.md` (user); `en-us/claude-app/guides/skills-over-mcp.md` (app-claude) | parcial |
 
+| [007](007-anthropic-session-cache.md) | 2026-11-27 10:33 | https://claude.com/resources/articles/maximizing-the-value-of-your-claude-code-sessions | Maximizing the value of your Claude Code sessions | claude-code | Official article: protect the prompt cache (set model/effort at the start, `/rewind` instead of `/compact` mid-session, compact before a break). Practical conflict with 001: `opusplan` switches model on plan-mode enter/exit and breaks the cache. | `en-us/claude/skills/protect-session-cache/SKILL.md` (user); `en-us/claude/snippets/compact-instructions.md` (user or project, optional) | parcial |
+
 The pt-BR paths of each artifact are in the canonical index and in the name map of [`USAGE.md`](../USAGE.md#name-map), which also has the per-source "how to use".
 
-Next free number: **007** (same numbering in both languages).
+Next free number: **008** (same numbering in both languages).

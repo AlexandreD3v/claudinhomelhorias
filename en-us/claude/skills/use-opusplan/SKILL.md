@@ -59,7 +59,7 @@ In the `/model` picker, choosing `opusplan` **does not save** a new default (the
 
 ## Official caveats (do not skip)
 
-- **Cache miss on the switch.** Every move in or out of plan mode with `opusplan` is a model switch and starts a new cache. The next request rereads the history. This is expected; avoid toggling plan mode without need.
+- **Cache miss on the switch.** Every move in or out of plan mode with `opusplan` is a model switch and starts a new cache. The next request rereads the history. This is expected; avoid toggling plan mode without need. Source 007 (`protect-session-cache`) goes further: turn on `opusplan` at the start of the session or right after `/clear`, not in the middle of an already long conversation.
 - **Shared limits.** The 5-hour limit (starts at the first message and resets 5 hours later) and the weekly limit apply together to Claude (web, desktop, mobile) and Claude Code. Verified Ultra has no 5-hour limit, per the help center at the date of this source.
 - **Another official habit this article does not teach:** when *switching to an unrelated task*, Anthropic recommends `/clear` (the conversation resets; `CLAUDE.md` and the project stay). In the middle of the same task, use `/compact`. Do not attribute this to the XDA article; it is in the official usage and cost docs.
 

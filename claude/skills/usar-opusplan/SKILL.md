@@ -58,7 +58,7 @@ Também vale `claude --model opusplan` só naquela invocação.
 
 ## Ressalvas oficiais (não pule)
 
-- **Cache miss na troca.** Cada ida ou volta do plan mode com `opusplan` é uma troca de modelo e começa um cache novo. O próximo pedido relê o histórico. Isso é esperado; evite alternar o plan mode sem necessidade.
+- **Cache miss na troca.** Cada ida ou volta do plan mode com `opusplan` é uma troca de modelo e começa um cache novo. O próximo pedido relê o histórico. Isso é esperado; evite alternar o plan mode sem necessidade. A fonte 007 (`cuidar-cache-da-sessao`) aprofunda: ligue `opusplan` no início da sessão ou logo após `/clear`, não no meio de uma conversa já longa.
 - **Limites compartilhados.** O limite de 5 horas (começa na primeira mensagem e zera 5 horas depois) e o limite semanal valem juntos para o Claude (web, desktop, mobile) e o Claude Code. Ultra verificado não tem o limite de 5 horas, segundo o help center na data desta fonte.
 - **Outro hábito oficial, que este artigo não ensina:** ao *mudar de tarefa* não relacionada, a Anthropic recomenda `/clear` (a conversa zera; `CLAUDE.md` e o projeto permanecem). No meio da mesma tarefa, use `/compact`. Não atribua isso ao artigo da XDA; está na doc oficial de uso e custos.
 

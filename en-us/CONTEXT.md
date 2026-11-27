@@ -2,7 +2,7 @@
 
 US English mirror of [`CONTEXTO.md`](../CONTEXTO.md) (pt-BR, canonical). This file is the repository's persistent context. Any future session should read it **before** processing a new site, and update it (in both languages) when a decision or convention changes.
 
-Last updated: November 26, 2026, 17:55 (America/Sao_Paulo).
+Last updated: November 27, 2026, 10:33 (America/Sao_Paulo).
 
 ## Goal
 
@@ -144,6 +144,12 @@ Current premises, confirmed by Alexandre on **November 25, 2026** (America/Sao_P
 - Alexandre approved processing now the official Anthropic article (Nov 24) on Skills over MCP, Tasks, Elicitation and File Uploads, despite the high weekly quota.
 - Theme `ambos`: skill `usar-skills-pelo-mcp` (user) and guide `claude-app/guias/skills-pelo-mcp.md` (app-claude), with an en-US mirror (`use-mcp-skills`, `guides/skills-over-mcp.md`). Status `parcial`.
 - Divergences recorded in the note: the article still says “coming soon to Enterprise”, the official table already lists Team and Enterprise as Admin-enabled; the docs cite v2.1.331+, the changelog announces the feature in 2.1.332; File Uploads is “rolling out” in the article and already documented in beta with restrictions.
+
+### 2026-11-27 — Ten tips, one source at a time; source 007 (session cache)
+
+- Alexandre approved adding the 10 tips from the research (`/workspace/claudinho-dicas-10.md`), **one at a time**, in list order, so he can watch how each one is used before the next.
+- First: source 007, official article “Maximizing the value of your Claude Code sessions”. Theme `claude-code`, status `parcial`. Skill `cuidar-cache-da-sessao` (user) and optional snippet `instrucoes-de-compact.md`. en-US mirror: `protect-session-cache`, `compact-instructions.md`.
+- Conflict with 001 recorded on both sides: `opusplan` switches model on plan-mode enter/exit and breaks the cache; turn it on at the start of the session (or after `/clear`), not in the middle.
 ## How to resume a session
 
 1. Read this file (including the Premises section) and the latest diary entry.

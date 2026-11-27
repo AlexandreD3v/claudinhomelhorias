@@ -16,3 +16,4 @@ Skills neste pacote (o espelho en-US, com nomes em inglês, está em [`en-us/cla
 - [`enxugar-contexto`](enxugar-contexto/SKILL.md) — medir e enxugar o contexto sempre carregado (CLAUDE.md, regras, imports), decidindo o que vira skill, regra, subpasta, hook ou subagente (destino: `usuario`; fonte 004).
 - [`registrar-handoff`](registrar-handoff/SKILL.md) — nota de handoff em `HANDOFF.md` para projetos compartilhados com outros agentes, com modelos em [`modelos.md`](registrar-handoff/modelos.md) (destino: `projeto`; fonte 005).
 - [`usar-skills-pelo-mcp`](usar-skills-pelo-mcp/SKILL.md) — skills, Tasks e Elicitation enviados por um servidor ou conector MCP (destino: `usuario`; fonte 006).
+- [`cuidar-cache-da-sessao`](cuidar-cache-da-sessao/SKILL.md) — proteger o prompt cache (modelo no início, `/rewind` vs `/compact`, compactar antes da pausa) (destino: `usuario`; fonte 007).
