@@ -2,7 +2,7 @@
 
 US English mirror of [`CONTEXTO.md`](../CONTEXTO.md) (pt-BR, canonical). This file is the repository's persistent context. Any future session should read it **before** processing a new site, and update it (in both languages) when a decision or convention changes.
 
-Last updated: November 27, 2026, 10:33 (America/Sao_Paulo).
+Last updated: November 27, 2026, 10:50 (America/Sao_Paulo).
 
 ## Goal
 
@@ -150,6 +150,11 @@ Current premises, confirmed by Alexandre on **November 25, 2026** (America/Sao_P
 - Alexandre approved adding the 10 tips from the research (`/workspace/claudinho-dicas-10.md`), **one at a time**, in list order, so he can watch how each one is used before the next.
 - First: source 007, official article “Maximizing the value of your Claude Code sessions”. Theme `claude-code`, status `parcial`. Skill `cuidar-cache-da-sessao` (user) and optional snippet `instrucoes-de-compact.md`. en-US mirror: `protect-session-cache`, `compact-instructions.md`.
 - Conflict with 001 recorded on both sides: `opusplan` switches model on plan-mode enter/exit and breaks the cache; turn it on at the start of the session (or after `/clear`), not in the middle.
+
+### 2026-11-27 — Source 008 (clean the session; tip 2 of 10)
+
+- Second tip on the list, after Alexandre asked to continue and to test 007 later. Same official article as 007; skill `limpar-sessao` (user), mirror `clean-session`. Status `parcial`.
+- Distinction recorded with 004: an `@` import in `CLAUDE.md` does not save context; `@file` in a message attaches the file for that turn only. Also cross-linked with 007 (`/rewind` / `/compact` / cache after `/clear`).
 ## How to resume a session
 
 1. Read this file (including the Premises section) and the latest diary entry.

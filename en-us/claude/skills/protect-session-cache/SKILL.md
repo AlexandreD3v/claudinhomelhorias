@@ -38,4 +38,4 @@ Each move in or out of plan mode with `opusplan` is a model switch and breaks th
 
 ## What this skill does not cover
 
-`/clear` between tasks, `@` in a message and `/context` are also in the same article, but they are left for the next tip on the research list. Don't confuse an `@` in a message with an `@` import in `CLAUDE.md` (source 004: an import does not save context).
+`/clear` between tasks, `@` in a message and `/context` are also in the same article and now live in source 008 (skill `clean-session`). Don't confuse an `@` in a message with an `@` import in `CLAUDE.md` (source 004: an import does not save context).

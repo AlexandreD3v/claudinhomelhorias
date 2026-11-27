@@ -20,6 +20,8 @@ Coluna `Tema`: `claude-code` (artefatos em [`claude/`](../claude/)), `claude-app
 
 | 007 | 2026-11-27 10:33 | https://claude.com/resources/articles/maximizing-the-value-of-your-claude-code-sessions | Maximizing the value of your Claude Code sessions | claude-code | Artigo oficial: proteger o prompt cache (modelo/esforço no início, `/rewind` em vez de `/compact` no meio, compactar antes da pausa). Conflito prático com a 001: `opusplan` troca de modelo ao entrar/sair do plan mode e quebra o cache. | `claude/skills/cuidar-cache-da-sessao/SKILL.md` (usuario); `claude/snippets/instrucoes-de-compact.md` (usuario ou projeto, opcional) | parcial |
 
+| 008 | 2026-11-27 10:50 | https://claude.com/resources/articles/maximizing-the-value-of-your-claude-code-sessions | Maximizing the value of your Claude Code sessions (hábitos de sessão) | claude-code | Mesmo artigo da 007, fatia de `/clear` entre tarefas, `/context` no início e `@arquivo` na mensagem. Distingue esse `@` do import no `CLAUDE.md` (fonte 004, sem economia de contexto). | `claude/skills/limpar-sessao/SKILL.md` (usuario) | parcial |
+
 Os caminhos da coluna Artefatos são os pt-BR. Cada artefato instalável tem espelho en-US em `en-us/` (nome em inglês); a tabela de nomes e o “como usar” por fonte estão em [`USO.md`](../USO.md) e [`en-us/USAGE.md`](../en-us/USAGE.md).
 
-Próximo número livre: **008**.
+Próximo número livre: **009**.

@@ -47,7 +47,7 @@ Limite que pega: um `CLAUDE.md` de subpasta, ou uma regra que carrega sob demand
 
 ## 3. Armadilha: `@arquivo` não economiza
 
-Quebrar o `CLAUDE.md` em vários arquivos e importá-los com `@caminho` organiza, mas **não reduz o contexto**: o arquivo importado carrega junto com quem importa, no início da sessão. Para economizar de fato, use as opções de carregamento sob demanda da tabela acima. Citar um caminho em texto simples (sem `@`) só ajuda se o Claude decidir abrir o arquivo.
+Quebrar o `CLAUDE.md` em vários arquivos e importá-los com `@caminho` organiza, mas **não reduz o contexto**: o arquivo importado carrega junto com quem importa, no início da sessão. Para economizar de fato, use as opções de carregamento sob demanda da tabela acima. Citar um caminho em texto simples (sem `@`) só ajuda se o Claude decidir abrir o arquivo. Um `@caminho` *numa mensagem* (fonte 008, skill `limpar-sessao`) é outra coisa: anexa o arquivo só naquele turno e pode evitar um Read.
 
 ## 4. Mandar operações verbosas para um subagente
 

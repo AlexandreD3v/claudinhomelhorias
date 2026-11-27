@@ -63,6 +63,7 @@ The starter already said: short file (under 200 lines), procedures in skills, ru
 ## Conflicts between sources
 
 - **Pointing `CLAUDE.md` to separate files.** Article: split the instructions into files and let `CLAUDE.md` guide to the right one. Official: an `@` import does not save anything; mentioning the path in plain text only helps if Claude decides to open the file. Recommendation (without hiding the article): use the on-demand mechanisms.
+- **Source 008** (the same official article as 007, skill `clean-session`): an `@file` *in a message* attaches the file for that turn and can avoid a Read or a search. That does not contradict the import: they are different mechanisms. Both sides stay: an `@` in `CLAUDE.md` does not save context (this source); an `@` in a message is a session habit (008).
 - **Half the tokens.** Article title: usage "cut in half", a personal number with no method. The body admits a subagent can raise the total. Official: no savings figure; the subagent's requests count toward the usage limit. The skill promises no savings.
 - **What stays at the root.** Article: the root `CLAUDE.md` says where the main files are. Official: `/doctor` cuts from `CLAUDE.md` what Claude can discover in the code, such as the folder tree, the dependency list and the architecture overview. The skill says to keep only what is not derivable.
 

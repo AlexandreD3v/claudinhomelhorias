@@ -18,6 +18,7 @@ US English mirror of this repository: the installable packages, the analysis not
 | [`fontes/005-xda-pasta-compartilhada-handoff.md`](../fontes/005-xda-pasta-compartilhada-handoff.md) | [`sources/005-xda-shared-handoff-folder.md`](sources/005-xda-shared-handoff-folder.md) |
 | [`fontes/006-anthropic-skills-pelo-mcp.md`](../fontes/006-anthropic-skills-pelo-mcp.md) | [`sources/006-anthropic-skills-over-mcp.md`](sources/006-anthropic-skills-over-mcp.md) |
 | [`fontes/007-anthropic-cache-da-sessao.md`](../fontes/007-anthropic-cache-da-sessao.md) | [`sources/007-anthropic-session-cache.md`](sources/007-anthropic-session-cache.md) |
+| [`fontes/008-anthropic-limpar-sessao.md`](../fontes/008-anthropic-limpar-sessao.md) | [`sources/008-anthropic-clean-session.md`](sources/008-anthropic-clean-session.md) |
 | [`GUIA-ANALISE-SITE.md`](../GUIA-ANALISE-SITE.md) | [`SITE-ANALYSIS-GUIDE.md`](SITE-ANALYSIS-GUIDE.md) |
 | [`CONTEXTO.md`](../CONTEXTO.md) | [`CONTEXT.md`](CONTEXT.md) |
 | [`PROCESSO.md`](../PROCESSO.md) | [`PROCESS.md`](PROCESS.md) |

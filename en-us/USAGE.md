@@ -31,6 +31,7 @@ The English names differ on purpose: both versions can be installed together in 
 | 006 | app guide | `guides/skills-over-mcp.md` | `guias/skills-pelo-mcp.md` |
 | 007 | skill | `protect-session-cache` | `cuidar-cache-da-sessao` |
 | 007 | snippet | `snippets/compact-instructions.md` | `snippets/instrucoes-de-compact.md` |
+| 008 | skill | `clean-session` | `limpar-sessao` |
 | repo | skill | `process-source` | `processar-fonte` |
 | repo | subagent | `source-extractor` | `extrator-fonte` |
 | repo | output style | `concise-en-us` | `conciso-ptbr` |
@@ -70,6 +71,7 @@ The English names differ on purpose: both versions can be installed together in 
 ## Source 004 — trim the always-loaded context
 
 - **What it does:** the `trim-context` skill measures the context (`/context`, `/usage`, `/doctor prompt-audit`) and decides what leaves `CLAUDE.md` for a skill, a rule with `paths`, a subfolder `CLAUDE.md`, a hook or a subagent. The starter `en-us/claude/CLAUDE.md` carries two reminders about it.
+- **Cross-reference with source 008:** an `@` *import* in `CLAUDE.md` does not save context (this source). `@file` *in a message* (skill `clean-session`) attaches the file for that turn only and can avoid a Read — they are different mechanisms.
 - **Install (user):**
   ```bash
   mkdir -p ~/.claude/skills && cp -R "$REPO/en-us/claude/skills/trim-context" ~/.claude/skills/
@@ -113,6 +115,17 @@ The English names differ on purpose: both versions can be installed together in 
 - **Invoke:** `/protect-session-cache`, or Claude loads it on its own when you talk about cache, `/rewind`, `/compact` or switching models mid-session.
 - **Test:** in a new session, set the model at the start, run two or three turns, run `/rewind` and check that the conversation moved back. In another session, compare (in `/usage` or whatever cache signal your version shows) a mid-session `/model` versus one at the start. Not tested yet; the source is `parcial`.
 
+
+## Source 008 — clean the session (/clear, /context, @ in the message)
+
+- **What it does:** the `clean-session` skill teaches `/clear` between unrelated tasks, `/context` at the start of a new session and `@file` in the message to attach a known file. It distinguishes that `@` from an import in `CLAUDE.md` (source 004) and points `/rewind` and `/compact` to source 007.
+- **Install (user):**
+  ```bash
+  mkdir -p ~/.claude/skills && cp -R "$REPO/en-us/claude/skills/clean-session" ~/.claude/skills/
+  ```
+- **Invoke:** `/clean-session`, or Claude loads it on its own when you switch tasks, ask what is in context, or name a file without attaching it.
+- **Test:** in a session with history from another task, run `/clear` and check that the history is gone and `CLAUDE.md` stayed; in a new session, `/context` once; in a request, `@` a known file. Not tested yet; the source is `parcial`.
+
 ## The repository's own tools
 
 They do not come from an external source; they serve the pipeline. `process-source` (skill, user) and `source-extractor` (subagent, user) process a new link following the [guide](SITE-ANALYSIS-GUIDE.md): install with `cp -R "$REPO/en-us/claude/skills/process-source" ~/.claude/skills/` and `cp "$REPO/en-us/claude/agents/source-extractor.md" ~/.claude/agents/`, and invoke with `/process-source <url>` in this repository's checkout. The `concise-en-us` style (user) goes into `~/.claude/output-styles/` and is turned on with `/output-style` or `"outputStyle": "concise-en-us"` in settings.
@@ -121,7 +134,7 @@ They do not come from an external source; they serve the pipeline. `process-sour
 
 Goal: see, in your own use, whether the English version uses less context or is followed better than the Portuguese one. There is no official number on this; you have to measure.
 
-**Isolate the two versions.** With both installed together, the descriptions of the auto-invoked skills (`use-opusplan`/`usar-opusplan`, `use-code-mode`/`usar-code-mode`, `use-mcp-skills`/`usar-skills-pelo-mcp`, `protect-session-cache`/`cuidar-cache-da-sessao`, `process-source`/`processar-fonte`) enter the skill list twice, and Claude may pick either one. To compare, install one language at a time, or use one config directory for each (it may ask you to log in again):
+**Isolate the two versions.** With both installed together, the descriptions of the auto-invoked skills (`use-opusplan`/`usar-opusplan`, `use-code-mode`/`usar-code-mode`, `use-mcp-skills`/`usar-skills-pelo-mcp`, `protect-session-cache`/`cuidar-cache-da-sessao`, `clean-session`/`limpar-sessao`, `process-source`/`processar-fonte`) enter the skill list twice, and Claude may pick either one. To compare, install one language at a time, or use one config directory for each (it may ask you to log in again):
 
 ```bash
 CLAUDE_CONFIG_DIR=~/.claude-ptbr claude   # only the pt-BR artifacts installed here

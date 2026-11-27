@@ -2,7 +2,7 @@
 
 Este arquivo é o contexto persistente do repositório. Qualquer sessão futura deve lê-lo **antes** de processar um site novo, e atualizá-lo quando uma decisão ou convenção mudar.
 
-Última atualização: 27 de novembro de 2026, 10:33 (America/Sao_Paulo).
+Última atualização: 27 de novembro de 2026, 10:50 (America/Sao_Paulo).
 
 ## Objetivo
 
@@ -149,6 +149,11 @@ Premissas vigentes, confirmadas por Alexandre em **25 de novembro de 2026** (Ame
 - Alexandre aprovou adicionar as 10 dicas da pesquisa (`/workspace/claudinho-dicas-10.md`), **uma de cada vez**, na ordem da lista, para observar a utilização de cada uma antes da seguinte.
 - Primeira: fonte 007, artigo oficial “Maximizing the value of your Claude Code sessions”. Tema `claude-code`, status `parcial`. Skill `cuidar-cache-da-sessao` (usuario) e snippet opcional `instrucoes-de-compact.md`. Espelho en-US: `protect-session-cache`, `compact-instructions.md`.
 - Conflito com a 001 registrado nos dois lados: `opusplan` troca de modelo ao entrar/sair do plan mode e quebra o cache; ligar no início da sessão (ou após `/clear`), não no meio.
+
+### 2026-11-27 — Fonte 008 (limpar a sessão; dica 2 de 10)
+
+- Segunda dica da lista, depois de o Alexandre pedir para seguir e testar a 007 depois. Mesmo artigo oficial da 007; skill `limpar-sessao` (usuario), espelho `clean-session`. Status `parcial`.
+- Distinção registrada com a 004: `@` import no `CLAUDE.md` não economiza contexto; `@arquivo` na mensagem anexa só naquele turno. Cruzamento também com a 007 (`/rewind` / `/compact` / cache depois do `/clear`).
 ## Como retomar uma sessão
 
 1. Ler este arquivo (incluindo a seção Premissas) e a última entrada do diário.

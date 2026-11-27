@@ -31,6 +31,7 @@ Os nomes em inglês são diferentes de propósito: as duas versões podem ficar 
 | 006 | guia do app | `guias/skills-pelo-mcp.md` | `guides/skills-over-mcp.md` |
 | 007 | skill | `cuidar-cache-da-sessao` | `protect-session-cache` |
 | 007 | snippet | `snippets/instrucoes-de-compact.md` | `snippets/compact-instructions.md` |
+| 008 | skill | `limpar-sessao` | `clean-session` |
 | repo | skill | `processar-fonte` | `process-source` |
 | repo | subagente | `extrator-fonte` | `source-extractor` |
 | repo | estilo de saída | `conciso-ptbr` | `concise-en-us` |
@@ -70,6 +71,7 @@ Os nomes em inglês são diferentes de propósito: as duas versões podem ficar 
 ## Fonte 004 — enxugar o contexto sempre carregado
 
 - **O que faz:** a skill `enxugar-contexto` mede o contexto (`/context`, `/usage`, `/doctor prompt-audit`) e decide o que sai do `CLAUDE.md` para skill, regra com `paths`, `CLAUDE.md` de subpasta, hook ou subagente. O starter `claude/CLAUDE.md` ganhou dois lembretes sobre isso.
+- **Cruzamento com a fonte 008:** o `@` *import* no `CLAUDE.md` não economiza contexto (esta fonte). O `@arquivo` *na mensagem* (skill `limpar-sessao`) anexa o arquivo só naquele turno e pode evitar um Read — são mecanismos diferentes.
 - **Instalar (usuario):**
   ```bash
   mkdir -p ~/.claude/skills && cp -R "$REPO/claude/skills/enxugar-contexto" ~/.claude/skills/
@@ -113,6 +115,17 @@ Os nomes em inglês são diferentes de propósito: as duas versões podem ficar 
 - **Invocar:** `/cuidar-cache-da-sessao`, ou o Claude carrega sozinho quando você fala de cache, `/rewind`, `/compact` ou de trocar de modelo no meio da sessão.
 - **Testar:** numa sessão nova, fixe o modelo no início, faça duas ou três rodadas, rode `/rewind` e confira que a conversa recuou. Noutra sessão, compare (em `/usage` ou no sinal de cache da sua versão) um `/model` no meio versus no início. Ainda não testado; a fonte está `parcial`.
 
+
+## Fonte 008 — limpar a sessão (/clear, /context, @ na mensagem)
+
+- **O que faz:** a skill `limpar-sessao` ensina `/clear` entre tarefas não relacionadas, `/context` no início de uma sessão nova e `@arquivo` na mensagem para anexar um arquivo conhecido. Distingue esse `@` do import no `CLAUDE.md` (fonte 004) e aponta `/rewind` e `/compact` para a fonte 007.
+- **Instalar (usuario):**
+  ```bash
+  mkdir -p ~/.claude/skills && cp -R "$REPO/claude/skills/limpar-sessao" ~/.claude/skills/
+  ```
+- **Invocar:** `/limpar-sessao`, ou o Claude carrega sozinho ao mudar de tarefa, ao pedir o que está no contexto, ou ao citar um arquivo sem anexá-lo.
+- **Testar:** numa sessão com histórico de outra tarefa, rode `/clear` e confira que o histórico saiu e o `CLAUDE.md` ficou; numa sessão nova, `/context` uma vez; num pedido, `@` um arquivo conhecido. Ainda não testado; a fonte está `parcial`.
+
 ## Ferramentas do próprio repositório
 
 Não vêm de fonte externa; servem ao pipeline. `processar-fonte` (skill, usuario) e `extrator-fonte` (subagente, usuario) processam um link novo seguindo o [guia](GUIA-ANALISE-SITE.md): instale com `cp -R "$REPO/claude/skills/processar-fonte" ~/.claude/skills/` e `cp "$REPO/claude/agents/extrator-fonte.md" ~/.claude/agents/`, e invoque com `/processar-fonte <url>` no checkout deste repositório. O estilo `conciso-ptbr` (usuario) vai para `~/.claude/output-styles/` e se liga com `/output-style` ou `"outputStyle": "conciso-ptbr"` no settings.
@@ -121,7 +134,7 @@ Não vêm de fonte externa; servem ao pipeline. `processar-fonte` (skill, usuari
 
 Objetivo: ver, no seu uso, se a versão em inglês gasta menos contexto ou é seguida melhor que a em português. Não há número oficial sobre isso; é preciso medir.
 
-**Isole as duas versões.** Com as duas instaladas juntas, as descrições das skills automáticas (`usar-opusplan`/`use-opusplan`, `usar-code-mode`/`use-code-mode`, `usar-skills-pelo-mcp`/`use-mcp-skills`, `cuidar-cache-da-sessao`/`protect-session-cache`, `processar-fonte`/`process-source`) entram duas vezes na lista de skills, e o Claude pode escolher qualquer uma. Para comparar, instale um idioma por vez, ou use um diretório de configuração para cada um (pode pedir login de novo):
+**Isole as duas versões.** Com as duas instaladas juntas, as descrições das skills automáticas (`usar-opusplan`/`use-opusplan`, `usar-code-mode`/`use-code-mode`, `usar-skills-pelo-mcp`/`use-mcp-skills`, `cuidar-cache-da-sessao`/`protect-session-cache`, `limpar-sessao`/`clean-session`, `processar-fonte`/`process-source`) entram duas vezes na lista de skills, e o Claude pode escolher qualquer uma. Para comparar, instale um idioma por vez, ou use um diretório de configuração para cada um (pode pedir login de novo):
 
 ```bash
 CLAUDE_CONFIG_DIR=~/.claude-ptbr claude   # só os artefatos pt-BR instalados aqui

@@ -48,7 +48,7 @@ A limit that bites: a subfolder `CLAUDE.md`, or a rule loaded on demand, that go
 
 ## 3. Trap: `@file` does not save anything
 
-Splitting `CLAUDE.md` into several files and importing them with `@path` organizes, but **does not reduce the context**: the imported file loads together with the importer, at session start. To actually save, use the on-demand options in the table above. Mentioning a path in plain text (no `@`) only helps if Claude decides to open the file.
+Splitting `CLAUDE.md` into several files and importing them with `@path` organizes, but **does not reduce the context**: the imported file loads together with the importer, at session start. To actually save, use the on-demand options in the table above. Mentioning a path in plain text (no `@`) only helps if Claude decides to open the file. An `@path` *in a message* (source 008, skill `clean-session`) is something else: it attaches the file for that turn only and can avoid a Read.
 
 ## 4. Send verbose operations to a subagent
 

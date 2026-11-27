@@ -17,3 +17,4 @@ Skills neste pacote (o espelho en-US, com nomes em inglês, está em [`en-us/cla
 - [`registrar-handoff`](registrar-handoff/SKILL.md) — nota de handoff em `HANDOFF.md` para projetos compartilhados com outros agentes, com modelos em [`modelos.md`](registrar-handoff/modelos.md) (destino: `projeto`; fonte 005).
 - [`usar-skills-pelo-mcp`](usar-skills-pelo-mcp/SKILL.md) — skills, Tasks e Elicitation enviados por um servidor ou conector MCP (destino: `usuario`; fonte 006).
 - [`cuidar-cache-da-sessao`](cuidar-cache-da-sessao/SKILL.md) — proteger o prompt cache (modelo no início, `/rewind` vs `/compact`, compactar antes da pausa) (destino: `usuario`; fonte 007).
+- [`limpar-sessao`](limpar-sessao/SKILL.md) — `/clear` entre tarefas, `/context` no início e `@arquivo` na mensagem (destino: `usuario`; fonte 008).

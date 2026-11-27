@@ -8,7 +8,7 @@
 
 ## Resumo
 
-Artigo oficial sobre como tirar mais valor de cada token numa sessão do Claude Code. O prompt cache é automático: reler o prefixo em cache custa 0,1× o input; gravar no cache custa até 2×, uma vez. O que muda o começo da requisição (tools, system prompt, conversa com o `CLAUDE.md` na frente) dispara um prefill inteiro a preço cheio — no plano as mesmas requisições consomem a cota, mesmo sem preço visível. O artigo manda fixar modelo, esforço e Fast mode **no início** (ou logo após um `/clear`); se as últimas rodadas saíram errado, usar `/rewind` (só corta o fim; o que veio antes continua em cache, sem custo extra) e não `/compact` (reescreve a conversa e sempre custa). `/compact` vale **antes de uma pausa**, enquanto o cache ainda está quente (1 hora no plano; 5 minutos numa API key, ou 1 hora com `ENABLE_PROMPT_CACHING_1H=1`). Dá para guiar o resumo com uma seção “Compact instructions” no `CLAUDE.md`. Retomar sessão antiga quase sempre é cache miss. O artigo também trata de `/clear`, `@` em arquivo e `/context`; isso fica para a dica 2 da lista de pesquisa, não entra nos artefatos desta fonte.
+Artigo oficial sobre como tirar mais valor de cada token numa sessão do Claude Code. O prompt cache é automático: reler o prefixo em cache custa 0,1× o input; gravar no cache custa até 2×, uma vez. O que muda o começo da requisição (tools, system prompt, conversa com o `CLAUDE.md` na frente) dispara um prefill inteiro a preço cheio — no plano as mesmas requisições consomem a cota, mesmo sem preço visível. O artigo manda fixar modelo, esforço e Fast mode **no início** (ou logo após um `/clear`); se as últimas rodadas saíram errado, usar `/rewind` (só corta o fim; o que veio antes continua em cache, sem custo extra) e não `/compact` (reescreve a conversa e sempre custa). `/compact` vale **antes de uma pausa**, enquanto o cache ainda está quente (1 hora no plano; 5 minutos numa API key, ou 1 hora com `ENABLE_PROMPT_CACHING_1H=1`). Dá para guiar o resumo com uma seção “Compact instructions” no `CLAUDE.md`. Retomar sessão antiga quase sempre é cache miss. O artigo também trata de `/clear`, `@` em arquivo e `/context`; isso ficou para a dica 2 e hoje está na fonte 008 (`limpar-sessao`).
 
 ## O que foi lido
 
@@ -42,7 +42,7 @@ Artigo oficial sobre como tirar mais valor de cada token numa sessão do Claude 
 
 ## Duplicatas e reuso
 
-A fonte 001 já registra o cache miss na troca de modelo (incluindo cada ida/volta do plan mode com `opusplan`) e aponta `/clear` e `/compact` como hábitos oficiais que o artigo da XDA não ensina. Esta fonte não substitui a 001: ela aprofunda o cache (preço 0,1×, o que quebra o prefixo, Fast mode, validade de 1 hora, `/rewind` barato vs `/compact` pago, seção no `CLAUDE.md`). Não havia skill só sobre isso. O `/clear` entre tarefas, o `@` na mensagem e o `/context` do mesmo artigo ficam de fora, reservados à dica 2 da lista.
+A fonte 001 já registra o cache miss na troca de modelo (incluindo cada ida/volta do plan mode com `opusplan`) e aponta `/clear` e `/compact` como hábitos oficiais que o artigo da XDA não ensina. Esta fonte não substitui a 001: ela aprofunda o cache (preço 0,1×, o que quebra o prefixo, Fast mode, validade de 1 hora, `/rewind` barato vs `/compact` pago, seção no `CLAUDE.md`). Não havia skill só sobre isso. O `/clear` entre tarefas, o `@` na mensagem e o `/context` do mesmo artigo ficaram de fora desta fonte e estão na 008 (`limpar-sessao`).
 
 ## Divergências com a documentação oficial
 

@@ -62,6 +62,7 @@ O starter já dizia: arquivo curto (menos de 200 linhas), procedimento em skill,
 ## Conflitos entre fontes
 
 - **Apontar o `CLAUDE.md` para arquivos separados.** Artigo: dividir as instruções em arquivos e deixar o `CLAUDE.md` guiar até o certo. Oficial: import com `@` não economiza; citar o caminho em texto simples só vale se o Claude decidir abrir o arquivo. Recomendação (sem esconder o artigo): usar os mecanismos sob demanda.
+- **Fonte 008** (mesmo artigo oficial da 007, skill `limpar-sessao`): um `@arquivo` *na mensagem* anexa o arquivo àquele turno e pode evitar um Read ou uma busca. Isso não contradiz o import: são mecanismos diferentes. Os dois lados ficam: `@` no `CLAUDE.md` não economiza (esta fonte); `@` na mensagem é hábito de sessão (008).
 - **Metade dos tokens.** Título do artigo: uso “cortado pela metade”, número pessoal e sem método. O corpo admite que subagente pode aumentar o total. Oficial: sem cifra de economia; as requisições do subagente contam no limite de uso. A skill não promete economia.
 - **O que fica na raiz.** Artigo: o `CLAUDE.md` da raiz diz onde ficam os arquivos principais. Oficial: o `/doctor` corta do `CLAUDE.md` o que o Claude descobre no código, como árvore de pastas, lista de dependências e visão da arquitetura. A skill manda manter só o não derivável.
 

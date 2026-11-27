@@ -20,6 +20,8 @@ Dates in the "Accessed" column are in the **America/Sao_Paulo** time zone.
 
 | [007](007-anthropic-session-cache.md) | 2026-11-27 10:33 | https://claude.com/resources/articles/maximizing-the-value-of-your-claude-code-sessions | Maximizing the value of your Claude Code sessions | claude-code | Official article: protect the prompt cache (set model/effort at the start, `/rewind` instead of `/compact` mid-session, compact before a break). Practical conflict with 001: `opusplan` switches model on plan-mode enter/exit and breaks the cache. | `en-us/claude/skills/protect-session-cache/SKILL.md` (user); `en-us/claude/snippets/compact-instructions.md` (user or project, optional) | parcial |
 
+| [008](008-anthropic-clean-session.md) | 2026-11-27 10:50 | https://claude.com/resources/articles/maximizing-the-value-of-your-claude-code-sessions | Maximizing the value of your Claude Code sessions (session habits) | claude-code | Same article as 007, the `/clear` between tasks, `/context` at the start and `@file` in the message slice. Distinguishes that `@` from an import in `CLAUDE.md` (source 004, no context saving). | `en-us/claude/skills/clean-session/SKILL.md` (user) | parcial |
+
 The pt-BR paths of each artifact are in the canonical index and in the name map of [`USAGE.md`](../USAGE.md#name-map), which also has the per-source "how to use".
 
-Next free number: **008** (same numbering in both languages).
+Next free number: **009** (same numbering in both languages).

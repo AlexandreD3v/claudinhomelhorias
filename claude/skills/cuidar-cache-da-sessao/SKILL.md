@@ -37,4 +37,4 @@ Cada ida ou volta do plan mode com `opusplan` é uma troca de modelo e quebra o 
 
 ## O que esta skill não cobre
 
-`/clear` entre tarefas, `@` numa mensagem e `/context` também estão no mesmo artigo, mas ficaram para a próxima dica da lista de pesquisa. Não misture o `@` de mensagem com o `@` import no `CLAUDE.md` (fonte 004: import não economiza contexto).
+`/clear` entre tarefas, `@` numa mensagem e `/context` também estão no mesmo artigo e agora estão na fonte 008 (skill `limpar-sessao`). Não misture o `@` de mensagem com o `@` import no `CLAUDE.md` (fonte 004: import não economiza contexto).
