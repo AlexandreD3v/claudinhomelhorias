@@ -2,7 +2,7 @@
 
 US English mirror of [`CONTEXTO.md`](../CONTEXTO.md) (pt-BR, canonical). This file is the repository's persistent context. Any future session should read it **before** processing a new site, and update it (in both languages) when a decision or convention changes.
 
-Last updated: November 27, 2026, 10:50 (America/Sao_Paulo).
+Last updated: November 27, 2026, 11:24 (America/Sao_Paulo).
 
 ## Goal
 
@@ -155,6 +155,11 @@ Current premises, confirmed by Alexandre on **November 25, 2026** (America/Sao_P
 
 - Second tip on the list, after Alexandre asked to continue and to test 007 later. Same official article as 007; skill `limpar-sessao` (user), mirror `clean-session`. Status `parcial`.
 - Distinction recorded with 004: an `@` import in `CLAUDE.md` does not save context; `@file` in a message attaches the file for that turn only. Also cross-linked with 007 (`/rewind` / `/compact` / cache after `/clear`).
+
+### 2026-11-27 — Source 009 (/rewind and checkpoints; tip 3 of 10)
+
+- Third tip on the list, after Alexandre asked to continue. Official checkpointing and commands docs. Skill `usar-rewind` (user), mirror `use-rewind`. Status `parcial`.
+- Official limits in the note and the skill: a Bash-only file and most subagent edits are not restored — use Git. Cross-link with 007: `/rewind` keeps the prompt cache; `/compact` does not.
 ## How to resume a session
 
 1. Read this file (including the Premises section) and the latest diary entry.

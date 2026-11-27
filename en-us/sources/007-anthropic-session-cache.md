@@ -47,12 +47,12 @@ Source 001 already records the cache miss on a model switch (including each move
 
 ## Divergences from the official docs
 
-None on the facts: the article is from Anthropic itself and lines up with the prompt-caching page. Scope only: the article cites `/rewind` as a way to cut the end without breaking the cache; the checkpointing page is what lists what rewind **does not** restore (Bash-only changes, subagents). The skill points to both and does not promise to restore what a checkpoint does not capture.
+None on the facts: the article is from Anthropic itself and lines up with the prompt-caching page. Scope only: the article cites `/rewind` as a way to cut the end without breaking the cache; the checkpointing page is what lists what rewind **does not** restore (Bash-only changes, subagents). The skill points to both and does not promise to restore what a checkpoint does not capture. The full menu, shortcuts and those limits now live in source 009 (skill `use-rewind`).
 
 ## Conflicts between sources
 
 - **Source 001 (`opusplan`) versus this source.** Both agree that every model switch, including entering or leaving plan mode with `opusplan`, causes a cache miss. This article makes the practical cost clearer: rereading the history in the middle of a long conversation is expensive; the cheap moment to turn on `opusplan` (or any `/model`) is the start of the session or right after a `/clear`. That does not invalidate 001 — the `use-opusplan` skill still stands — but 001 gets a cross-reference: don't turn the alias on in the middle of an already long session. Both sides stay visible in both notes and in `USAGE.md`.
-- Source 001 still recommends `/compact` in the middle of a long task, in the sense of the costs docs. This source does not forbid `/compact`; it reserves it for when you actually want a summary (and, preferably, before a break, with a warm cache) and says to use `/rewind` when the goal is only to drop the last turns.
+- Source 001 still recommends `/compact` in the middle of a long task, in the sense of the costs docs. This source does not forbid `/compact`; it reserves it for when you actually want a summary (and, preferably, before a break, with a warm cache) and says to use `/rewind` when the goal is only to drop the last turns. The `/rewind` menu detail moved to source 009.
 
 ## Open items
 

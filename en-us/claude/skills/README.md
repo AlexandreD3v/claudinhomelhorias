@@ -18,3 +18,4 @@ The English names below differ from the pt-BR ones (in parentheses), so both ver
 - [`use-mcp-skills`](use-mcp-skills/SKILL.md) (`usar-skills-pelo-mcp`) — skills, Tasks and Elicitation shipped by an MCP server or connector (destination: `user`; source 006).
 - [`protect-session-cache`](protect-session-cache/SKILL.md) (`cuidar-cache-da-sessao`) — protect the prompt cache (model at the start, `/rewind` vs `/compact`, compact before a break) (destination: `user`; source 007).
 - [`clean-session`](clean-session/SKILL.md) (`limpar-sessao`) — `/clear` between tasks, `/context` at the start and `@file` in the message (destination: `user`; source 008).
+- [`use-rewind`](use-rewind/SKILL.md) (`usar-rewind`) — `/rewind` menu (restore or summarize a checkpoint) and what does not come back (destination: `user`; source 009).

@@ -32,6 +32,7 @@ Os nomes em inglês são diferentes de propósito: as duas versões podem ficar 
 | 007 | skill | `cuidar-cache-da-sessao` | `protect-session-cache` |
 | 007 | snippet | `snippets/instrucoes-de-compact.md` | `snippets/compact-instructions.md` |
 | 008 | skill | `limpar-sessao` | `clean-session` |
+| 009 | skill | `usar-rewind` | `use-rewind` |
 | repo | skill | `processar-fonte` | `process-source` |
 | repo | subagente | `extrator-fonte` | `source-extractor` |
 | repo | estilo de saída | `conciso-ptbr` | `concise-en-us` |
@@ -107,6 +108,7 @@ Os nomes em inglês são diferentes de propósito: as duas versões podem ficar 
 ## Fonte 007 — proteger o prompt cache da sessão
 
 - **O que faz:** a skill `cuidar-cache-da-sessao` ensina a fixar modelo, esforço e Fast mode no início, a usar `/rewind` (não `/compact`) para desfazer as últimas rodadas, e a compactar antes de uma pausa, enquanto o cache ainda vale (1 hora no plano). Registra o conflito com a fonte 001: `opusplan` quebra o cache a cada ida/volta do plan mode. O snippet `instrucoes-de-compact.md` é opcional, para colar no `CLAUDE.md`.
+- **Cruzamento com a fonte 009:** o menu completo de `/rewind`, os atalhos e o que o checkpoint **não** restaura (Bash só, subagente; use Git) estão na skill `usar-rewind`. Esta fonte cobre só o lado do cache (`/rewind` preserva; `/compact` não).
 - **Instalar a skill (usuario):**
   ```bash
   mkdir -p ~/.claude/skills && cp -R "$REPO/claude/skills/cuidar-cache-da-sessao" ~/.claude/skills/
@@ -126,6 +128,17 @@ Os nomes em inglês são diferentes de propósito: as duas versões podem ficar 
 - **Invocar:** `/limpar-sessao`, ou o Claude carrega sozinho ao mudar de tarefa, ao pedir o que está no contexto, ou ao citar um arquivo sem anexá-lo.
 - **Testar:** numa sessão com histórico de outra tarefa, rode `/clear` e confira que o histórico saiu e o `CLAUDE.md` ficou; numa sessão nova, `/context` uma vez; num pedido, `@` um arquivo conhecido. Ainda não testado; a fonte está `parcial`.
 
+
+## Fonte 009 — /rewind e checkpoints
+
+- **O que faz:** a skill `usar-rewind` ensina o menu de `/rewind` (`/undo`, `/checkpoint`, `Esc` duas vezes): restaurar código e/ou conversa, ou resumir a partir de um ponto. Inclui os limites oficiais (arquivo só no Bash e a maior parte das edições de subagente não voltam; use Git) e o cruzamento com a 007 (rewind preserva o cache; `/compact` não).
+- **Instalar (usuario):**
+  ```bash
+  mkdir -p ~/.claude/skills && cp -R "$REPO/claude/skills/usar-rewind" ~/.claude/skills/
+  ```
+- **Invocar:** `/usar-rewind`, ou o Claude carrega sozinho quando você quer desfazer edições, recuar a conversa ou pergunta se o rewind desfaz Bash ou subagente. O comando do Claude Code continua sendo `/rewind`.
+- **Testar:** numa sessão, peça ao Claude para editar um arquivo, rode `/rewind` e confira as opções. Depois mude um arquivo **só** no Bash (sem o Claude tê-lo editado antes) e veja que o rewind não o restaura. Ainda não testado; a fonte está `parcial`.
+
 ## Ferramentas do próprio repositório
 
 Não vêm de fonte externa; servem ao pipeline. `processar-fonte` (skill, usuario) e `extrator-fonte` (subagente, usuario) processam um link novo seguindo o [guia](GUIA-ANALISE-SITE.md): instale com `cp -R "$REPO/claude/skills/processar-fonte" ~/.claude/skills/` e `cp "$REPO/claude/agents/extrator-fonte.md" ~/.claude/agents/`, e invoque com `/processar-fonte <url>` no checkout deste repositório. O estilo `conciso-ptbr` (usuario) vai para `~/.claude/output-styles/` e se liga com `/output-style` ou `"outputStyle": "conciso-ptbr"` no settings.
@@ -134,7 +147,7 @@ Não vêm de fonte externa; servem ao pipeline. `processar-fonte` (skill, usuari
 
 Objetivo: ver, no seu uso, se a versão em inglês gasta menos contexto ou é seguida melhor que a em português. Não há número oficial sobre isso; é preciso medir.
 
-**Isole as duas versões.** Com as duas instaladas juntas, as descrições das skills automáticas (`usar-opusplan`/`use-opusplan`, `usar-code-mode`/`use-code-mode`, `usar-skills-pelo-mcp`/`use-mcp-skills`, `cuidar-cache-da-sessao`/`protect-session-cache`, `limpar-sessao`/`clean-session`, `processar-fonte`/`process-source`) entram duas vezes na lista de skills, e o Claude pode escolher qualquer uma. Para comparar, instale um idioma por vez, ou use um diretório de configuração para cada um (pode pedir login de novo):
+**Isole as duas versões.** Com as duas instaladas juntas, as descrições das skills automáticas (`usar-opusplan`/`use-opusplan`, `usar-code-mode`/`use-code-mode`, `usar-skills-pelo-mcp`/`use-mcp-skills`, `cuidar-cache-da-sessao`/`protect-session-cache`, `limpar-sessao`/`clean-session`, `usar-rewind`/`use-rewind`, `processar-fonte`/`process-source`) entram duas vezes na lista de skills, e o Claude pode escolher qualquer uma. Para comparar, instale um idioma por vez, ou use um diretório de configuração para cada um (pode pedir login de novo):
 
 ```bash
 CLAUDE_CONFIG_DIR=~/.claude-ptbr claude   # só os artefatos pt-BR instalados aqui

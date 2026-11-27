@@ -27,7 +27,7 @@ Hábitos do artigo oficial da fonte 007 (Anthropic, 14 de agosto de 2026), confe
 ## Regras
 
 1. Escolha `/model`, `/effort` e, se for usar, o Fast mode **no começo** da sessão, ou logo após um `/clear`. Trocar no meio quebra o cache e o próximo turno relê a conversa toda (prefill a preço cheio). Ligar o Fast mode no meio ainda prefills a preço do Fast mode; desligá-lo, para o cache, é de graça.
-2. Se as últimas rodadas não servem, use `/rewind` (ou `/undo`) até antes delas — só o fim sai, o que veio antes continua em cache, sem custo extra. Não use `/compact` só para desfazer: ele reescreve a conversa e sempre custa. O menu e os limites do que o rewind restaura estão em [checkpointing](https://code.claude.com/docs/en/checkpointing) (edição só no Bash, e a maior parte das edições de subagente, podem não voltar; use Git).
+2. Se as últimas rodadas não servem, use `/rewind` (ou `/undo`) até antes delas — só o fim sai, o que veio antes continua em cache, sem custo extra. Não use `/compact` só para desfazer: ele reescreve a conversa e sempre custa. O menu completo e os limites (Bash só, subagente; use Git) estão na fonte 009, skill `usar-rewind`.
 3. Se você quer mesmo resumir, rode `/compact` **antes** de uma pausa, enquanto o cache ainda vale: 1 hora no plano; 5 minutos numa API key (`ENABLE_PROMPT_CACHING_1H=1` sobe para 1 hora). Diga o que manter, ou cole o snippet `instrucoes-de-compact.md` no `CLAUDE.md`. Em modelo de 1M, `/autocompact 200k` devolve o auto-compact antigo (v2.1.221+).
 4. Retomar uma sessão antiga quase sempre é cache miss (o cache já expirou e o system prompt é remontado na abertura).
 
@@ -37,4 +37,4 @@ Cada ida ou volta do plan mode com `opusplan` é uma troca de modelo e quebra o 
 
 ## O que esta skill não cobre
 
-`/clear` entre tarefas, `@` numa mensagem e `/context` também estão no mesmo artigo e agora estão na fonte 008 (skill `limpar-sessao`). Não misture o `@` de mensagem com o `@` import no `CLAUDE.md` (fonte 004: import não economiza contexto).
+O menu de `/rewind` e o que o checkpoint não restaura: fonte 009 (skill `usar-rewind`). `/clear` entre tarefas, `@` numa mensagem e `/context` também estão no mesmo artigo e agora estão na fonte 008 (skill `limpar-sessao`). Não misture o `@` de mensagem com o `@` import no `CLAUDE.md` (fonte 004: import não economiza contexto).

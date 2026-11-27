@@ -46,12 +46,12 @@ A fonte 001 já registra o cache miss na troca de modelo (incluindo cada ida/vol
 
 ## Divergências com a documentação oficial
 
-Nenhuma de fato: o artigo é da própria Anthropic e alinha com a página de prompt caching. Detalhe só no escopo: o artigo cita `/rewind` como jeito de cortar o fim sem quebrar o cache; a página de checkpointing é que lista o que o rewind **não** restaura (Bash só, subagente). A skill aponta os dois e não promete restaurar o que o checkpoint não captura.
+Nenhuma de fato: o artigo é da própria Anthropic e alinha com a página de prompt caching. Detalhe só no escopo: o artigo cita `/rewind` como jeito de cortar o fim sem quebrar o cache; a página de checkpointing é que lista o que o rewind **não** restaura (Bash só, subagente). A skill aponta os dois e não promete restaurar o que o checkpoint não captura. O menu completo, os atalhos e esses limites estão agora na fonte 009 (skill `usar-rewind`).
 
 ## Conflitos entre fontes
 
 - **Fonte 001 (`opusplan`) versus esta fonte.** As duas concordam que cada troca de modelo, inclusive entrar ou sair do plan mode com `opusplan`, gera cache miss. O artigo desta fonte deixa o custo prático mais explícito: reler o histórico no meio de uma conversa longa sai caro; o momento barato de ligar o `opusplan` (ou qualquer `/model`) é o início da sessão ou logo após um `/clear`. Não invalida a 001 — a skill `usar-opusplan` continua válida — mas a 001 ganha uma linha cruzada: não ligue o alias no meio de uma sessão já longa. Os dois lados ficam visíveis nas duas notas e no `USO.md`.
-- A fonte 001 ainda recomenda `/compact` no meio de uma tarefa longa, no sentido da doc de custos. Esta fonte não proíbe `/compact`; ela o reserva para quando você quer mesmo resumir (e, de preferência, antes de uma pausa, com o cache quente) e manda usar `/rewind` quando o objetivo é só descartar as últimas rodadas.
+- A fonte 001 ainda recomenda `/compact` no meio de uma tarefa longa, no sentido da doc de custos. Esta fonte não proíbe `/compact`; ela o reserva para quando você quer mesmo resumir (e, de preferência, antes de uma pausa, com o cache quente) e manda usar `/rewind` quando o objetivo é só descartar as últimas rodadas. O detalhe do menu de `/rewind` passou para a fonte 009.
 
 ## Pendências
 

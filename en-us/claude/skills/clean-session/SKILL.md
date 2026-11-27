@@ -26,7 +26,7 @@ Habits from the official source 008 article (Anthropic, August 14, 2026; the sam
 
 ## Rules
 
-1. When you **switch to a task** that does not share useful context, run `/clear`. The conversation is cleared; `CLAUDE.md`, skills and the project remain. Don't use `/clear` to undo the last turns — that is `/rewind` (source 007, skill `protect-session-cache`). Don't use `/compact` in place of `/clear` when the task has changed.
+1. When you **switch to a task** that does not share useful context, run `/clear`. The conversation is cleared; `CLAUDE.md`, skills and the project remain. Don't use `/clear` to undo the last turns — that is `/rewind` (source 009, skill `use-rewind`; the cache side is source 007). Don't use `/compact` in place of `/clear` when the task has changed.
 2. In a **new session**, run `/context` once (or `/context all` for the memory-file list) and see what is already in. If the weight is `CLAUDE.md`, imports or always-loaded rules, use `/trim-context` (source 004). If it is MCP tools, see source 006 and the tool-search docs.
 3. When the request is about a file you already know, write `@path` **in the message** to attach it for that turn, instead of only naming it. That can save a Read or a search.
 4. A noisy command: ask for quiet flags (`-q`, `--quiet`) or put the heavy output in a subagent — the output enters the conversation and stays until the session ends (source 004's principle; not a new artifact).
@@ -38,4 +38,4 @@ An `@path` **in `CLAUDE.md`** (an import) loads the file in every session and do
 
 ## What this skill does not cover
 
-Protecting the prompt cache (`/model` at the start, `/rewind` vs `/compact`, compacting before a break) is source 007. Triaging `CLAUDE.md` is source 004.
+The `/rewind` menu and checkpoint limits: source 009. Protecting the prompt cache (`/model` at the start, `/rewind` vs `/compact`, compacting before a break) is source 007. Triaging `CLAUDE.md` is source 004.

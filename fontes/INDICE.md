@@ -22,6 +22,8 @@ Coluna `Tema`: `claude-code` (artefatos em [`claude/`](../claude/)), `claude-app
 
 | 008 | 2026-11-27 10:50 | https://claude.com/resources/articles/maximizing-the-value-of-your-claude-code-sessions | Maximizing the value of your Claude Code sessions (hábitos de sessão) | claude-code | Mesmo artigo da 007, fatia de `/clear` entre tarefas, `/context` no início e `@arquivo` na mensagem. Distingue esse `@` do import no `CLAUDE.md` (fonte 004, sem economia de contexto). | `claude/skills/limpar-sessao/SKILL.md` (usuario) | parcial |
 
+| 009 | 2026-11-27 11:24 | https://code.claude.com/docs/en/checkpointing | Checkpointing | claude-code | Doc oficial: `/rewind` (aliases `/undo`, `/checkpoint`) restaura código e/ou conversa ou resume a partir de um checkpoint. Limites: Bash só e a maior parte das edições de subagente não voltam — use Git. Completa a 007 (rewind preserva o cache; `/compact` não). | `claude/skills/usar-rewind/SKILL.md` (usuario) | parcial |
+
 Os caminhos da coluna Artefatos são os pt-BR. Cada artefato instalável tem espelho en-US em `en-us/` (nome em inglês); a tabela de nomes e o “como usar” por fonte estão em [`USO.md`](../USO.md) e [`en-us/USAGE.md`](../en-us/USAGE.md).
 
-Próximo número livre: **009**.
+Próximo número livre: **010**.

@@ -25,7 +25,7 @@ Hábitos do artigo oficial da fonte 008 (Anthropic, 14 de agosto de 2026; o mesm
 
 ## Regras
 
-1. Ao **mudar de tarefa** que não compartilha contexto útil, rode `/clear`. A conversa zera; `CLAUDE.md`, skills e o projeto permanecem. Não use `/clear` para desfazer as últimas rodadas — isso é `/rewind` (fonte 007, skill `cuidar-cache-da-sessao`). Não use `/compact` no lugar de `/clear` quando a tarefa mudou.
+1. Ao **mudar de tarefa** que não compartilha contexto útil, rode `/clear`. A conversa zera; `CLAUDE.md`, skills e o projeto permanecem. Não use `/clear` para desfazer as últimas rodadas — isso é `/rewind` (fonte 009, skill `usar-rewind`; o lado do cache é a fonte 007). Não use `/compact` no lugar de `/clear` quando a tarefa mudou.
 2. Numa **sessão nova**, rode `/context` uma vez (ou `/context all` para a lista de arquivos de memória) e veja o que já entra. Se o peso for `CLAUDE.md`, imports ou regras sempre carregadas, use `/enxugar-contexto` (fonte 004). Se for tools MCP, veja a fonte 006 e a doc de tool search.
 3. Quando o pedido for sobre um arquivo que você já conhece, escreva `@caminho` **na mensagem** para anexá-lo naquele turno, em vez de só citar o nome. Isso pode poupar um Read ou uma busca.
 4. Comando barulhento: peça flags quietas (`-q`, `--quiet`) ou deixe a saída pesada num subagente — o output entra na conversa e fica até o fim da sessão (princípio da fonte 004; não é artefato novo).
@@ -37,4 +37,4 @@ Um `@caminho` **no `CLAUDE.md`** (import) carrega o arquivo em toda sessão e **
 
 ## O que esta skill não cobre
 
-Proteger o prompt cache (`/model` no início, `/rewind` vs `/compact`, compactar antes da pausa) é a fonte 007. Triar o `CLAUDE.md` é a fonte 004.
+O menu de `/rewind` e os limites do checkpoint: fonte 009. Proteger o prompt cache (`/model` no início, `/rewind` vs `/compact`, compactar antes da pausa) é a fonte 007. Triar o `CLAUDE.md` é a fonte 004.

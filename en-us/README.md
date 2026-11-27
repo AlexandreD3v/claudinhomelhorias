@@ -19,6 +19,7 @@ US English mirror of this repository: the installable packages, the analysis not
 | [`fontes/006-anthropic-skills-pelo-mcp.md`](../fontes/006-anthropic-skills-pelo-mcp.md) | [`sources/006-anthropic-skills-over-mcp.md`](sources/006-anthropic-skills-over-mcp.md) |
 | [`fontes/007-anthropic-cache-da-sessao.md`](../fontes/007-anthropic-cache-da-sessao.md) | [`sources/007-anthropic-session-cache.md`](sources/007-anthropic-session-cache.md) |
 | [`fontes/008-anthropic-limpar-sessao.md`](../fontes/008-anthropic-limpar-sessao.md) | [`sources/008-anthropic-clean-session.md`](sources/008-anthropic-clean-session.md) |
+| [`fontes/009-oficial-rewind-checkpoints.md`](../fontes/009-oficial-rewind-checkpoints.md) | [`sources/009-official-rewind-checkpoints.md`](sources/009-official-rewind-checkpoints.md) |
 | [`GUIA-ANALISE-SITE.md`](../GUIA-ANALISE-SITE.md) | [`SITE-ANALYSIS-GUIDE.md`](SITE-ANALYSIS-GUIDE.md) |
 | [`CONTEXTO.md`](../CONTEXTO.md) | [`CONTEXT.md`](CONTEXT.md) |
 | [`PROCESSO.md`](../PROCESSO.md) | [`PROCESS.md`](PROCESS.md) |

@@ -22,6 +22,8 @@ Dates in the "Accessed" column are in the **America/Sao_Paulo** time zone.
 
 | [008](008-anthropic-clean-session.md) | 2026-11-27 10:50 | https://claude.com/resources/articles/maximizing-the-value-of-your-claude-code-sessions | Maximizing the value of your Claude Code sessions (session habits) | claude-code | Same article as 007, the `/clear` between tasks, `/context` at the start and `@file` in the message slice. Distinguishes that `@` from an import in `CLAUDE.md` (source 004, no context saving). | `en-us/claude/skills/clean-session/SKILL.md` (user) | parcial |
 
+| [009](009-official-rewind-checkpoints.md) | 2026-11-27 11:24 | https://code.claude.com/docs/en/checkpointing | Checkpointing | claude-code | Official docs: `/rewind` (aliases `/undo`, `/checkpoint`) restores code and/or conversation or summarizes from a checkpoint. Limits: Bash-only changes and most subagent edits are not restored — use Git. Completes 007 (rewind keeps the cache; `/compact` does not). | `en-us/claude/skills/use-rewind/SKILL.md` (user) | parcial |
+
 The pt-BR paths of each artifact are in the canonical index and in the name map of [`USAGE.md`](../USAGE.md#name-map), which also has the per-source "how to use".
 
-Next free number: **009** (same numbering in both languages).
+Next free number: **010** (same numbering in both languages).

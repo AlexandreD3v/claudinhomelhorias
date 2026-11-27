@@ -18,3 +18,4 @@ Skills neste pacote (o espelho en-US, com nomes em inglês, está em [`en-us/cla
 - [`usar-skills-pelo-mcp`](usar-skills-pelo-mcp/SKILL.md) — skills, Tasks e Elicitation enviados por um servidor ou conector MCP (destino: `usuario`; fonte 006).
 - [`cuidar-cache-da-sessao`](cuidar-cache-da-sessao/SKILL.md) — proteger o prompt cache (modelo no início, `/rewind` vs `/compact`, compactar antes da pausa) (destino: `usuario`; fonte 007).
 - [`limpar-sessao`](limpar-sessao/SKILL.md) — `/clear` entre tarefas, `/context` no início e `@arquivo` na mensagem (destino: `usuario`; fonte 008).
+- [`usar-rewind`](usar-rewind/SKILL.md) — menu de `/rewind` (restaurar ou resumir um checkpoint) e o que não volta (destino: `usuario`; fonte 009).

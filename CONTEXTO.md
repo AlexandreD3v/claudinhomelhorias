@@ -2,7 +2,7 @@
 
 Este arquivo é o contexto persistente do repositório. Qualquer sessão futura deve lê-lo **antes** de processar um site novo, e atualizá-lo quando uma decisão ou convenção mudar.
 
-Última atualização: 27 de novembro de 2026, 10:50 (America/Sao_Paulo).
+Última atualização: 27 de novembro de 2026, 11:24 (America/Sao_Paulo).
 
 ## Objetivo
 
@@ -154,6 +154,11 @@ Premissas vigentes, confirmadas por Alexandre em **25 de novembro de 2026** (Ame
 
 - Segunda dica da lista, depois de o Alexandre pedir para seguir e testar a 007 depois. Mesmo artigo oficial da 007; skill `limpar-sessao` (usuario), espelho `clean-session`. Status `parcial`.
 - Distinção registrada com a 004: `@` import no `CLAUDE.md` não economiza contexto; `@arquivo` na mensagem anexa só naquele turno. Cruzamento também com a 007 (`/rewind` / `/compact` / cache depois do `/clear`).
+
+### 2026-11-27 — Fonte 009 (/rewind e checkpoints; dica 3 de 10)
+
+- Terceira dica da lista, depois de o Alexandre pedir para seguir. Doc oficial de checkpointing e commands. Skill `usar-rewind` (usuario), espelho `use-rewind`. Status `parcial`.
+- Limites oficiais na nota e na skill: arquivo só no Bash e a maior parte das edições de subagente não voltam — use Git. Cruzamento com a 007: `/rewind` preserva o prompt cache; `/compact` não.
 ## Como retomar uma sessão
 
 1. Ler este arquivo (incluindo a seção Premissas) e a última entrada do diário.
